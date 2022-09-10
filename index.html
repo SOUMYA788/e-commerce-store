@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./style/style.css">
+	<link rel="stylesheet" href="./style/all.min.css">
+	<link rel="stylesheet" href="./style/swiper-bundle.min.css">
+	<style>
+		nav#departments li.navLi a.nav_a#homePage {
+			color: #FF0057;
+		}
+	</style>
+	<title>Landing Page Demo</title>
+
+</head>
+
+<body>
+	<div id="mainDiv">
+		<nav id="topNav">
+			<a href="./index.html">letsPURCHASE.com</a>
+			<input type="search" name="search" id="search" placeholder="SEARCH">
+		</nav>
+
+		<nav id="departments">
+			<ul id="navUl">
+
+				<li class="navLi">
+					<a id="homePage" class="nav_a" href="./index.html">HOME</a>
+				</li>
+
+				<li class="navLi">
+					<a id="productPage" class="nav_a" href="./pages/products.html">PRODUCTS</a>
+					<ul class="productsUl">
+						<li>
+							<a href="./pages/mobiles.html">MOBILES</a>
+						</li>
+
+						<li>
+							<a href="./pages/mobiles.html">DESKTOP & LAPTOP</a>
+						</li>
+
+						<li>
+							<a href="./pages/mobiles.html">PENDRIVE</a>
+						</li>
+
+						<li>
+							<a href="./pages/mobiles.html">SMART WEAR</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="navLi">
+					<a id="loginPage" class="nav_a" href="./pages/login.html">LOG IN</a>
+				</li>
+
+				<li class="navLi">
+					<a id="bagPage" class="nav_a" href="./pages/bag.html">SHOPPING BAG</a>
+				</li>
+
+			</ul>
+		</nav>
+
+
+		<div class="hr_2px"></div>
+
+		<div id="contentDiv">
+
+			<section class="sec" id="sec_1">
+
+				<h1>35% off on and above purchase of Rs.2000</h1>
+
+				<p>
+					<a href="./pages/products.html">so, letsPURCHASE</a>
+				</p>
+
+
+				<div class="swiper swiper1">
+
+					<div class="swiper-wrapper">
+
+						<div class="imgDiv swiper-slide">
+							<img class="furImg" src="./img/mobiles/01.jpg" alt="img 1">
+						</div>
+
+						<div class="imgDiv swiper-slide">
+							<img class="furImg" src="./img/cammera/01.webp" alt="img 2">
+						</div>
+
+						<div class="imgDiv swiper-slide">
+							<img class="furImg" src="./img/desktop/01.jpg" alt="img 3">
+						</div>
+
+						<div class="imgDiv swiper-slide">
+							<img class="furImg" src="./img/furniture/02.jpg" alt="img 3">
+						</div>
+
+					</div>
+
+				</div>
+
+			</section>
+
+		</div>
+
+	</div>
+
+	<script src="./scripts/swiper-bundle.min.js"></script>
+
+	<script>
+		let swiper = new Swiper(".swiper1", {
+			grabCursor: true,
+			centeredSlides: true,
+			slidesPerView: "auto",
+			keyboard: {
+				enabled: true,
+			},
+			autoplay: {
+				delay: 2000,
+			},
+			loop: true,
+		});
+	</script>
+</body>
+
+</html>
