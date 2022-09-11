@@ -10,8 +10,8 @@
 	<link rel="stylesheet" href="../style/swiper-bundle.min.css">
 
 	<style>
-		nav#departments li.navLi a.nav_a#mobilePage {
-			color: #FF0057;
+		nav#departments li.navLi ul li a#mobiles {
+			color: white;
 		}
 	</style>
 
@@ -29,25 +29,43 @@
 			<ul id="navUl">
 
 				<li class="navLi">
-					<a id="homeLink" class="nav_a" href="../index.html">HOME</a>
+					<a id="homePage" class="nav_a" href="../index.html">HOME</a>
 				</li>
 
 				<li class="navLi">
-					<a id="electronicLink" class="nav_a" href="./products.html">PRODUCTS</a>
+					<a id="productPage" class="nav_a" href="./products.html">PRODUCTS</a>
+					<ul class="productsUl">
+						<li>
+							<a id="mobiles" href="./mobiles.html">MOBILES</a>
+						</li>
+
+						<li>
+							<a href="./mobiles.html">DESKTOP & LAPTOP</a>
+						</li>
+
+						<li>
+							<a href="./mobiles.html">PENDRIVE</a>
+						</li>
+
+						<li>
+							<a href="./mobiles.html">SMART WEAR</a>
+						</li>
+					</ul>
 				</li>
 
 				<li class="navLi">
-					<a id="electronicLink" class="nav_a" href="./login.html">LOG IN</a>
+					<a id="loginPage" class="nav_a" href="./login.html">LOG IN</a>
 				</li>
 
 				<li class="navLi">
-					<a class="nav_a" href="./bag.html">SHOPPING BAG</a>
+					<a id="bagPage" class="nav_a" href="./bag.html">SHOPPING BAG</a>
 				</li>
 
 			</ul>
 		</nav>
 
 		<div class="hr_2px"></div>
+
 
 		<div id="indvItem">
 
@@ -58,7 +76,7 @@
 				<div id="mobiles" class="stockCardsHolder">
 
 					<div class="stockCard mobileCard" id="realmeCard">
-						<p class="cardName">realme</p>
+						<p class="cardName"> <a href="./mobiles/realme.html">realme</a></p>
 					</div>
 
 					<div class="stockCard mobileCard" id="poco">
@@ -99,7 +117,6 @@
 		</div>
 	</div>
 
-	<script src="./scripts/close_window.js"></script>
 </body>
 
 </html>
