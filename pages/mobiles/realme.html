@@ -6,85 +6,70 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../../style/style.css">
-	<link rel="stylesheet" href="../../style/realme_page.css">
+	<!-- <link rel="stylesheet" href="../../style/products.css"> -->
 	<link rel="stylesheet" href="../../style/all.min.css">
 	<title>Realme</title>
 </head>
 
 <body>
 	<div id="mainDiv">
+		<section id="nav_top">
+			<nav id="topNav">
+				<a href="../../index.html">letsPURCHASE.com</a>
+				<input type="search" name="search" id="search" placeholder="SEARCH">
+			</nav>
+	
+			<nav id="departments">
+				<ul id="navUl">
+	
+					<li class="navLi">
+						<a id="homePage" class="nav_a" href="../../index.html">HOME</a>
+					</li>
+	
+					<li class="navLi">
+						<a id="productPage" class="nav_a" href="../products.html">PRODUCTS</a>
+						<ul class="productsUl">
+							<li>
+								<a href="../mobiles.html">MOBILES</a>
+							</li>
+	
+							<li>
+								<a href="../mobiles.html">DESKTOP & LAPTOP</a>
+							</li>
+	
+							<li>
+								<a href="../mobiles.html">PENDRIVE</a>
+							</li>
+	
+							<li>
+								<a href="../mobiles.html">SMART WEAR</a>
+							</li>
+						</ul>
+					</li>
+	
+					<li class="navLi">
+						<a id="loginPage" class="nav_a" href="../login.html">LOG IN</a>
+					</li>
+	
+					<li class="navLi">
+						<a id="bagPage" class="nav_a" href="../bag.html">SHOPPING BAG</a>
+					</li>
+				</ul>
+			</nav>
 
-		<nav id="topNav">
-			<a href="../../index.html">letsPURCHASE.com</a>
-			<input type="search" name="search" id="search" placeholder="SEARCH">
-		</nav>
+		</section>
 
-		<nav id="departments">
-			<ul id="navUl">
+		<div class="hr_2px" style="width: 100%;"></div>
 
-				<li class="navLi">
-					<a id="homePage" class="nav_a" href="../../index.html">HOME</a>
-				</li>
-
-				<li class="navLi">
-					<a id="productPage" class="nav_a" href="../products.html">PRODUCTS</a>
-					<ul class="productsUl">
-						<li>
-							<a href="../mobiles.html">MOBILES</a>
-						</li>
-
-						<li>
-							<a href="../mobiles.html">DESKTOP & LAPTOP</a>
-						</li>
-
-						<li>
-							<a href="../mobiles.html">PENDRIVE</a>
-						</li>
-
-						<li>
-							<a href="../mobiles.html">SMART WEAR</a>
-						</li>
-					</ul>
-				</li>
-
-				<li class="navLi">
-					<a id="loginPage" class="nav_a" href="../login.html">LOG IN</a>
-				</li>
-
-				<li class="navLi">
-					<a id="bagPage" class="nav_a" href="../bag.html">SHOPPING BAG</a>
-				</li>
-			</ul>
-		</nav>
-
-		<div class="hr_2px"></div>
-
-		<div id="contentDiv">
-
-			<div class="realmeAndroid">
-				<img src="../../img/mobiles/realme/01/01.webp" alt="realme" class="realmeImg">
-				<div class="androidInfo">
-					<h2>realme C31 (Light Silver, 32 GB)</h2>
-					<ul class="androidDetails">
-						<li>storages</li>
-						<li>screen</li>
-						<li>cammera</li>
-						<li>battery</li>
-						<li>processor</li>
-						<li>warrenty</li>
-					</ul>
-				</div>
-
-				<div class="pricing">
-					<p class="current_price">₹19,999</p>
-				</div>
-
-			</div>
+		<div id="realmeDiv" class="indvStock">
 
 		</div>
+
+		<footer id="footer"></footer>
 	</div>
 
-	<script src="../../scripts/mobiles.js"></script>
+	<script type="module" src="../../scripts/mobiles.js"></script>
+	<script src="../../scripts/footer.js"></script>
 </body>
 
 </html>

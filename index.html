@@ -14,7 +14,6 @@
 		}
 	</style>
 	<title>Landing Page Demo</title>
-
 </head>
 
 <body>
@@ -22,6 +21,13 @@
 		<nav id="topNav">
 			<a href="./index.html">letsPURCHASE.com</a>
 			<input type="search" name="search" id="search" placeholder="SEARCH">
+
+			<div id="navController">
+				<div class="navDash"></div>
+				<div class="navDash"></div>
+				<div class="navDash"></div>
+			</div>
+	
 		</nav>
 
 		<nav id="departments">
@@ -105,9 +111,14 @@
 
 		</div>
 
+
+		<footer id="footer"></footer>
+
 	</div>
 
+	<script src="./scripts/nav_controller.js"></script>
 	<script src="./scripts/swiper-bundle.min.js"></script>
+	<script src="./scripts/footer.js"></script>
 
 	<script>
 		let swiper = new Swiper(".swiper1", {

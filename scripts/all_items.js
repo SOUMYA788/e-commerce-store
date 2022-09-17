@@ -61,13 +61,6 @@ const appliance = [
 	}
 ]
 
-let mobiles = [
-	{
-
-	}
-]
-
-
 
 let setProduct = (locationID, productContainerInnerHTML, list) => {
 	if (locationID == null || productContainerInnerHTML == null || list == null) return
