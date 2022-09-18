@@ -45,6 +45,11 @@ const realmeMobiles = [
 		id: "0",
 		className: "realmeMobile",
 		img: "../../img/mobiles/realme/01/01.webp",
+		gallery: {
+			img1: "../../img/mobiles/realme/01/02.webp",
+			img2: "../../img/mobiles/realme/01/03.webp",
+			img3: "../../img/mobiles/realme/01/04.webp"
+		},
 		name: "realme C31 (Light Silver)",
 		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
 		display: "16.56 cm (6.52 inch) HD Display",
@@ -54,13 +59,13 @@ const realmeMobiles = [
 		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
 		price: "₹8,299",
 		other_details:{
-			box: "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
-			color: "light Silver",
-			model_name: "C31",
-			model_number: "RMX3501",
-			sim_type: "Dual Sim",
-			otg_compatable: "Yes",
-			sar_value: "Head: <2.0 W/kg, Body: <2.0 W/kg",
+			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
+			Color: "light Silver",
+			"Model Name": "C31",
+			"Model Number": "RMX3501",
+			"Sim Type": "Dual Sim",
+			"OTG Compatable": "Yes",
+			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
 		}
 	},
 
@@ -68,6 +73,11 @@ const realmeMobiles = [
 		id: "1",
 		className: "realmeMobile",
 		img: "../../img/mobiles/realme/02/01.webp",
+		gallery: {
+			img1: "../../img/mobiles/realme/02/02.webp",
+			img2: "../../img/mobiles/realme/02/03.webp",
+			img3: "../../img/mobiles/realme/02/04.webp"
+		},
 		name: "realme C31 (Dark Green)",
 		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
 		display: "16.56 cm (6.52 inch) HD Display",
@@ -75,13 +85,27 @@ const realmeMobiles = [
 		battery: "5000 mAh Battery",
 		processor: "Unisoc T612 Processor",
 		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹8,299"
+		price: "₹8,299",
+		other_details:{
+			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
+			Color: "light Silver",
+			"Model Name": "C31",
+			"Model Number": "RMX3501",
+			"Sim Type": "Dual Sim",
+			"OTG Compatable": "Yes",
+			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
+		}
 	},
 
 	{
 		id: "2",
 		className: "realmeMobile",
 		img: "../../img/mobiles/realme/03/01.webp",
+		gallery: {
+			img1: "../../img/mobiles/realme/03/02.webp",
+			img2: "../../img/mobiles/realme/03/03.webp",
+			img3: "../../img/mobiles/realme/03/04.webp"
+		},
 		name: "realme C30 (Bamboo Green)",
 		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
 		display: "16.51 cm (6.5 inch) HD+ Display",
@@ -89,13 +113,27 @@ const realmeMobiles = [
 		battery: "5000 mAh Lithium Ion Battery",
 		processor: "Unisoc T612 Processor",
 		warrenty: "1 Year Manufacturer Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹7,999"
+		price: "₹7,999",
+		other_details:{
+			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
+			Color: "light Silver",
+			"Model Name": "C31",
+			"Model Number": "RMX3501",
+			"Sim Type": "Dual Sim",
+			"OTG Compatable": "Yes",
+			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
+		}
 	},
 
 	{
 		id: "3",
 		className: "realmeMobile",
 		img: "../../img/mobiles/realme/04/01.webp",
+		gallery: {
+			img1: "../../img/mobiles/realme/04/02.webp",
+			img2: "../../img/mobiles/realme/04/03.webp",
+			img3: "../../img/mobiles/realme/04/04.webp"
+		},
 		name: "realme 9 (Sunburst Gold)",
 		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 256 GB",
 		display: "16.26 cm (6.4 inch) Full HD+ AMOLED Display",
@@ -103,13 +141,27 @@ const realmeMobiles = [
 		battery: "5000 mAh Lithium Ion Battery",
 		processor: "Qualcomm Snapdragon 680 Processor",
 		warrenty: "1 Year Manufacturer Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹14,499"
+		price: "₹14,499",
+		other_details:{
+			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
+			Color: "light Silver",
+			"Model Name": "C31",
+			"Model Number": "RMX3501",
+			"Sim Type": "Dual Sim",
+			"OTG Compatable": "Yes",
+			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
+		}
 	},
 
 	{
 		id: "4",
 		className: "realmeMobile",
 		img: "../../img/mobiles/realme/05/01.webp",
+		gallery: {
+			img1: "../../img/mobiles/realme/05/02.webp",
+			img2: "../../img/mobiles/realme/05/03.webp",
+			img3: "../../img/mobiles/realme/05/04.webp"
+		},
 		name: "realme 9 Pro+ 5G (Aurora Green)",
 		storage: "8 GB RAM | 256 GB ROM",
 		display: "16.26 cm (6.4 inch) Full HD+ AMOLED Display",
@@ -117,7 +169,16 @@ const realmeMobiles = [
 		battery: "4500 mAh Li-ion Battery",
 		processor: "Mediatek Dimensity 920 Processor",
 		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹26,999"
+		price: "₹26,999",
+		other_details:{
+			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
+			Color: "light Silver",
+			"Model Name": "C31",
+			"Model Number": "RMX3501",
+			"Sim Type": "Dual Sim",
+			"OTG Compatable": "Yes",
+			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
+		}
 	}
 ]
 
