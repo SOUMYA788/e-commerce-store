@@ -20,15 +20,18 @@ let dataHolderInnerHTML = `
 				<li>
 					<img class = "galleryImg" src="${data.gallery.img2}" alt="${data.name}">
 				</li>
+
 				<li>
 				<img class = "galleryImg" src="${data.gallery.img3}" alt="${data.name}">
 				</li>
 			</ul>
-
 		</div>
+
 		<div id="payments">
 			<span>
-				<a id="add_to_cart" href="#"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</a>
+				<a id="add_to_cart" href="#">
+					<i class="fa-solid fa-cart-shopping"></i> Add to Cart
+				</a>
 			</span>
 
 			<span>
@@ -114,14 +117,41 @@ let dataHolderInnerHTML = `
 
 dataHolder.innerHTML = dataHolderInnerHTML;
 
+
 let galleryImg = document.getElementsByClassName("galleryImg");
 let displayImg = document.getElementById("mainDisplayImg");
+localStorage.setItem("defaultImg", displayImg.src)
 
 for (let i = 0; i < galleryImg.length; i++) {
 	const img = galleryImg[i];
 	img.addEventListener("mouseover", (e) => {
 		e.stopPropagation()
-		console.log(img.src);
+		document.getElementById("col1DisplayImg").style.borderColor = "#ff0057"
 		displayImg.src = img.src
 	})
+
+	img.addEventListener("mouseout", (e) => {
+		e.stopPropagation()
+		document.getElementById("col1DisplayImg").style.borderColor = "transparent"
+		displayImg.src = localStorage.getItem("defaultImg")
+	})
 }
+
+let cartData = []
+
+let add_to_cart = document.getElementById("add_to_cart");
+add_to_cart.addEventListener("click", (e) => {
+	e.stopPropagation();
+
+	if (localStorage.getItem("cart_item") == undefined || localStorage.getItem("cart_item") == '') {
+		cartData.push(data)
+		localStorage.setItem("cart_item", JSON.stringify(cartData))
+	} else {
+		let prevData = JSON.parse(localStorage.getItem("cart_item"))
+		prevData.forEach(pd => {
+			cartData.push(pd)
+		});
+		cartData.push(data)
+		localStorage.setItem("cart_item",JSON.stringify(cartData))
+	}
+})

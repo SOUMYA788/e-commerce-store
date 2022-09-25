@@ -109,6 +109,14 @@
 			},
 			loop: true,
 		});
+
+		let swiper_wrapper_class = document.getElementsByClassName("swiper-wrapper");
+		for (let i = 0; i < swiper_wrapper_class.length; i++) {
+			const wrapper = swiper_wrapper_class[i];
+			wrapper.style.cursor = "default";
+			
+		}
+
 	</script>
 </body>
 

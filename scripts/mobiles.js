@@ -58,7 +58,8 @@ const realmeMobiles = [
 		processor: "Unisoc T612 Processor",
 		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
 		price: "₹8,299",
-		other_details:{
+		calc_price: 8299,
+		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
 			Color: "light Silver",
 			"Model Name": "C31",
@@ -86,7 +87,8 @@ const realmeMobiles = [
 		processor: "Unisoc T612 Processor",
 		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
 		price: "₹8,299",
-		other_details:{
+		calc_price: 8299,
+		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
 			Color: "light Silver",
 			"Model Name": "C31",
@@ -114,7 +116,8 @@ const realmeMobiles = [
 		processor: "Unisoc T612 Processor",
 		warrenty: "1 Year Manufacturer Warranty for Phone and 6 Months Warranty for In-Box Accessories",
 		price: "₹7,999",
-		other_details:{
+		calc_price: 7999,
+		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
 			Color: "light Silver",
 			"Model Name": "C31",
@@ -142,7 +145,8 @@ const realmeMobiles = [
 		processor: "Qualcomm Snapdragon 680 Processor",
 		warrenty: "1 Year Manufacturer Warranty for Phone and 6 Months Warranty for In-Box Accessories",
 		price: "₹14,499",
-		other_details:{
+		calc_price: 14499,
+		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
 			Color: "light Silver",
 			"Model Name": "C31",
@@ -170,7 +174,7 @@ const realmeMobiles = [
 		processor: "Mediatek Dimensity 920 Processor",
 		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
 		price: "₹26,999",
-		other_details:{
+		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
 			Color: "light Silver",
 			"Model Name": "C31",
@@ -187,6 +191,11 @@ const pocoMobiles = [
 		id: "0",
 		className: "pocoMobile",
 		img: "../../img/mobiles/poco/01/01.webp",
+		gallery: {
+			img1: "../../img/mobiles/poco/01/02.webp",
+			img2: "../../img/mobiles/poco/01/03.webp",
+			img3: "../../img/mobiles/poco/01/04.webp"
+		},
 		name: "POCO M3 Pro 5G (Black)",
 		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
 		display: "16.51 cm (6.5 inch) Full HD+ Display",
@@ -194,7 +203,17 @@ const pocoMobiles = [
 		battery: "5000 mAh Lithium-ion Polymer Battery",
 		processor: "MediaTek Dimensity 700 Processor",
 		warrenty: "1 Year Warranty for Handset, 6 Months for Accessories",
-		price: "₹16,499"
+		price: "₹16,499",
+		calc_price: 16499,
+		other_details: {
+			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
+			Color: "light Silver",
+			"Model Name": "C31",
+			"Model Number": "RMX3501",
+			"Sim Type": "Dual Sim",
+			"OTG Compatable": "Yes",
+			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
+		}
 	},
 
 	{
@@ -202,19 +221,39 @@ const pocoMobiles = [
 		className: "pocoMobile",
 		img: "../../img/mobiles/poco/02/01.webp",
 		name: "POCO M3 Pro 5G (Yellow)",
+		gallery: {
+			img1: "../../img/mobiles/poco/02/02.webp",
+			img2: "../../img/mobiles/poco/02/03.webp",
+			img3: "../../img/mobiles/poco/02/04.webp"
+		},
 		storage: "4 GB RAM | 64 GB ROM | Expandable Upto 1 TB",
 		display: "16.51 cm (6.5 inch) Full HD+ Display",
 		cammera: "48MP + 2MP + 2MP | 8MP Front Camera",
 		battery: "5000 mAh Lithium-ion Polymer Battery",
 		processor: "MediaTek Dimensity 700 Processor",
 		warrenty: "1 Year Warranty for Handset, 6 Months for Accessories",
-		price: "₹14,499"
+		price: "₹14,499",
+		calc_price: 14499,
+		other_details: {
+			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
+			Color: "Yellow",
+			"Model Name": "C31",
+			"Model Number": "RMX3501",
+			"Sim Type": "Dual Sim",
+			"OTG Compatable": "Yes",
+			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
+		}
 	},
 
 	{
 		id: "2",
 		className: "pocoMobile",
 		img: "../../img/mobiles/poco/03/01.webp",
+		gallery: {
+			img1: "../../img/mobiles/poco/03/02.webp",
+			img2: "../../img/mobiles/poco/03/03.webp",
+			img3: "../../img/mobiles/poco/03/04.webp"
+		},
 		name: "POCO M3 Pro 5G (Cool Blue)",
 		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
 		display: "16.51 cm (6.5 inch) Full HD+ Display",
@@ -222,7 +261,17 @@ const pocoMobiles = [
 		battery: "5000 mAh Lithium-ion Polymer Battery",
 		processor: "MediaTek Dimensity 700 Processor",
 		warrenty: "1 Year Warranty for Handset, 6 Months for Accessories",
-		price: "₹16,499"
+		price: "₹16,499",
+		calc_price: 16499,
+		other_details: {
+			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
+			Color: "Yellow",
+			"Model Name": "C31",
+			"Model Number": "RMX3501",
+			"Sim Type": "Dual Sim",
+			"OTG Compatable": "Yes",
+			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
+		}
 	}
 ]
 

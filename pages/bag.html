@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style/style.css">
+	<link rel="stylesheet" href="../style/all.min.css">
+	<title>CART</title>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<nav id="topNav">
+			<a href="../index.html">letsPURCHASE.com</a>
+			<input type="search" name="search" id="search" placeholder="SEARCH">
+		</nav>
+
+		<nav id="departments">
+			<ul id="navUl">
+
+				<li class="navLi">
+					<a id="homePage" class="nav_a" href="../index.html">HOME</a>
+				</li>
+
+				<li class="navLi">
+					<a id="productPage" class="nav_a" href="./products.html">PRODUCTS</a>
+				</li>
+
+				<li class="navLi">
+					<a id="loginPage" class="nav_a" href="./login.html">LOG IN</a>
+				</li>
+
+				<li class="navLi">
+					<a id="bagPage" class="nav_a" href="./bag.html">SHOPPING BAG</a>
+				</li>
+
+			</ul>
+		</nav>
+
+		<div class="hr_2px"></div>
+
+		<div id="cartContainer">
+
+			<div id="cartProductDetails" class="cartDiv">
+				<div id="cartAddress">
+					<p>Deliver To: <span>Kolkata - 700135</span></p>
+					<select name="selectedPin" id="selectedPin">
+						<option value="Kolkata - 700135">Kolkata - 700135</option>
+						<option value="Kolkata - 700135">Kolkata - 700135</option>
+						<option value="Kolkata - 700135">Kolkata - 700135</option>
+					</select>
+				</div>
+
+				<div id="cartProductList">
+
+					<div class="cpl">
+
+						<div class="cpl1">
+							<div>
+								<img src="../img/mobiles/01.jpg" alt="image">
+							</div>
+							<ul>
+								<li>
+									<P class="changeNegQTY">-</P>
+								</li>
+								<li>
+									<input type="text" name="qty" class="cartProductQTY" value="1">
+								</li>
+								<li>
+									<P class="changePosQTY">+</P>
+								</li>
+							</ul>
+						</div>
+
+						<div class="cpl2">
+							<p>product name</p>
+							<p><span>₹ </span> <span class="priceAMT">20,000</span></p>
+							<p>maximum delivery time</p>
+							<p class="cartRemove">REMOVE</p>
+						</div>
+
+					</div>
+
+					<div class="cpl">
+						<div class="cpl1">
+							<div>
+								<img src="../img/mobiles/01.jpg" alt="image">
+							</div>
+							<ul>
+								<li>
+									<P class="changeNegQTY">-</P>
+								</li>
+								<li>
+									<input type="text" name="qty" class="cartProductQTY" value="1">
+								</li>
+								<li>
+									<P class="changePosQTY">+</P>
+								</li>
+							</ul>
+						</div>
+
+						<div class="cpl2">
+							<p>product name</p>
+							<p> <span>₹ </span> <span class="priceAMT">25,000</span></p>
+							<p>maximum delivery time</p>
+							<p class="cartRemove">REMOVE</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+			<!-- then this one -->
+			<div id="cartPaymentDetails" class="cartDiv">
+				<h3>PRICE DETAILS</h3>
+				<div class="cartPaymentDetailsDiv">
+					<p>Price (<span>1 item</span>):</p>
+					<p> <span class="amtSign">₹</span> <span class="billItem" id="grossAmt"></span></p>
+				</div>
+
+				<div class="cartPaymentDetailsDiv">
+					<p>30% discount</p>
+					<p><span>₹</span> <span class="billItem" id="discount">1000</span></p>
+				</div>
+
+				<div class="cartPaymentDetailsDiv">
+					<p>Delivery Charges</p>
+					<p class="billItem">FREE</p>
+				</div>
+
+				<div class="cartPaymentDetailsDiv">
+					<p>Packing Charges</p>
+					<p><span>₹</span> <span class="billItem" id="delCh"> 50 </span></p>
+				</div>
+
+				<div class="cartPaymentDetailsDiv">
+					<p>TOTAL</p>
+					<p><span>₹</span> <span class="billItem" id="payableAmt"> 37,000 </span> </p>
+				</div>
+			</div>
+
+		</div>
+
+		<footer id="footer"></footer>
+	</div>
+
+	<script src="../scripts/maintain_bag.js"></script>
+
+	
+	
+</body>
+
+</html>

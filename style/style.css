@@ -290,7 +290,8 @@ section#sec_1 p {
 
 section#sec_1 p a {
 	color: #FF0057;
-	background: rgba(0, 0, 0, 0.8);
+	background: rgba(30, 30, 30, 0.8);
+	border: 2px solid black;
 	text-decoration: none;
 	padding: 8px 16px;
 	border-radius: 25px;
@@ -389,6 +390,10 @@ div.stockCardsHolder div.stockCard img.stockImg {
 }
 
 
+.swiper {
+	width: 100%;
+	height: 100%;
+}
 
 /* -----------------------------------------------------MOBILES----------------------------------------------------- */
 
@@ -522,13 +527,13 @@ div.stocks img {
 }
 
 div.stocks div.productInfo {
-    width: 59%;
-    height: 100%;
-    margin-right: 1%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+	width: 59%;
+	height: 100%;
+	margin-right: 1%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 
 div.stocks div.productInfo ul {
@@ -570,41 +575,43 @@ div.stocks div.pricing {
 }
 
 #stockDetails .stockDetailsCol {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
 }
 
 #stockDetails .col1 {
-    width: 30vw;
-    margin-right: 5vw;
+	width: 30vw;
+	margin-right: 5vw;
 }
 
-#stockDetails .col1 div#col1DisplayImg{
-	border: 1px solid black;
-    width: 100%;
-    height: 244px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    align-content: center;
+#stockDetails .col1 div#col1DisplayImg {
+	width: 100%;
+	height: 244px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	align-content: center;
 	overflow: hidden;
-	
+	border: 10px solid transparent;
+	padding: 10px;
 }
 
 #stockDetails .col1 div#col1DisplayImg img {
-	width: 35%;
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
 }
 
 #stockDetails .col2 {
-    width: 50vw;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    font-size: 1em;
+	width: 50vw;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	font-size: 1em;
 }
 
 #stockDetails .col1 .gallery {
@@ -617,28 +624,30 @@ div.stocks div.pricing {
 	overflow: hidden;
 	margin-top: 30px;
 }
-#stockDetails .col1 .gallery ul.galleryImgList{
+
+#stockDetails .col1 .gallery ul.galleryImgList {
 	width: 100%;
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
-#stockDetails .col1 .gallery ul.galleryImgList li{
+#stockDetails .col1 .gallery ul.galleryImgList li {
 	list-style: none;
-    text-align: center;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    align-content: center;
+	text-align: center;
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	align-content: center;
 }
 
-#stockDetails .col1 .gallery ul.galleryImgList li img{
-	max-width: 100%;
-	max-height: 100%;
+#stockDetails .col1 .gallery ul.galleryImgList li img {
+	width: 100%;
+	height: 100%;
 	cursor: pointer;
+	object-fit: contain;
 }
 
 #payments {
@@ -683,7 +692,7 @@ div.stocks div.pricing {
 	color: white;
 }
 
-#stockDetails .col2 h4{
+#stockDetails .col2 h4 {
 	font-family: nunito, serif;
 	margin-top: 10px;
 }
@@ -746,8 +755,170 @@ div.stocks div.pricing {
 	padding: 5px;
 }
 
-/* ----------------------------------------------FOOTER----------------------------------------------*/
 
+/* ----------------------------------------------BAG----------------------------------------------*/
+
+#cartContainer {
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-direction: row;
+	margin: 20px auto;
+}
+
+#cartContainer #cartProductDetails {
+	width: 55%;
+}
+
+#cartContainer #cartProductDetails>div,
+#cartContainer #cartPaymentDetails div,
+#cartContainer #cartPaymentDetails h3 {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#cartContainer #cartProductDetails>div {
+	padding: 10px;
+	background-color: #eaeaea;
+	margin-bottom: 10px;
+}
+
+#cartContainer #cartProductDetails div#cartAddress {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#cartContainer #cartProductDetails div#cartAddress select {
+	padding: 5px;
+	outline: none;
+	border: 2px solid black;
+	background: transparent;
+}
+
+div#cartAddress select option {
+	padding: 10px;
+	color: #ff0057;
+	cursor: pointer;
+}
+
+
+#cartProductList div.cpl {
+	margin: 10px auto;
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 10px;
+}
+
+#cartContainer #cartProductDetails #cartProductList div.cpl1 {
+	width: 25%;
+	height: 100%;
+	margin-right: 25px;
+}
+
+#cartContainer #cartProductDetails #cartProductList div.cpl1 ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 15px;
+}
+
+#cartContainer #cartProductDetails #cartProductList div.cpl1 ul li {
+	list-style: none;
+}
+
+div.cpl1 ul li:nth-child(1),
+div.cpl1 ul li:nth-child(3) {
+	width: 20%;
+}
+
+
+
+div.cpl1 ul li:nth-child(2) {
+	width: 50%;
+}
+
+div.cpl1 ul li p {
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+div.cpl1 ul li p{
+	/* border-color: green; */
+}
+
+#cartContainer #cartProductDetails #cartProductList div.cpl1 ul li input {
+	width: 100%;
+	text-align: center;
+}
+
+#cartContainer #cartProductDetails #cartProductList div.cpl1 div {
+	width: 70%;
+	margin: 0 auto;
+}
+
+#cartContainer #cartProductDetails #cartProductList div.cpl1 div img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+#cartContainer #cartProductDetails #cartProductList div.cpl2 {
+	width: 60%;
+}
+
+div.cpl2 p {
+	margin-bottom: 10px;
+}
+
+.cartRemove {
+	transition: 0.1s ease;
+	display: inline;
+}
+
+.cartRemove:hover {
+	color: #ff0057;
+	cursor: pointer;
+}
+
+
+#cartContainer #cartPaymentDetails {
+	width: 40%;
+}
+
+#cartContainer #cartPaymentDetails h3 {
+	padding: 5px 0;
+	margin-bottom: 15px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#cartContainer #cartPaymentDetails div {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#cartContainer #cartPaymentDetails div:last-child {
+	padding: 10px 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.5);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+	margin-top: 20px;
+	font-weight: 700;
+}
+
+
+/* ---------------------------------------------FOOTER---------------------------------------------*/
 
 footer#footer {
 	width: 100%;
@@ -835,7 +1006,7 @@ footer#footer div {
 
 	/* ------------INDIVIDUAL PRODUCT------------ */
 
-	div.stocks{
+	div.stocks {
 		height: 130px;
 	}
 
@@ -844,11 +1015,11 @@ footer#footer div {
 		height: 70%;
 	}
 
-	div.stocks div.productInfo{
+	div.stocks div.productInfo {
 		font-size: 0.7em;
 	}
 
-	div.stocks div.pricing{
+	div.stocks div.pricing {
 		font-size: 1em;
 	}
 
