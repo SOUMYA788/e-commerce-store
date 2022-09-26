@@ -20,26 +20,45 @@
 	<div id="mainDiv">
 		<nav id="topNav">
 			<a href="./index.html">letsPURCHASE.com</a>
-			<input type="search" name="search" id="search" placeholder="SEARCH">	
+			<input type="search" name="search" id="search" placeholder="SEARCH">
 		</nav>
 
 		<nav id="departments">
 			<ul id="navUl">
 
 				<li class="navLi">
-					<a id="homePage" class="nav_a" href="./index.html">HOME</a>
+					<a id="homePage" class="nav_a" href="./index.html">
+						<span class="licon">
+							<i class="fa-solid fa-house"></i>
+						</span>
+						HOME
+					</a>
 				</li>
 
 				<li class="navLi">
-					<a id="productPage" class="nav_a" href="./pages/products.html">PRODUCTS</a>
+					<a id="productPage" class="nav_a" href="./pages/products.html">
+						PRODUCTS
+					</a>
 				</li>
 
 				<li class="navLi">
-					<a id="loginPage" class="nav_a" href="./pages/login.html">LOG IN</a>
+					<a id="loginPage" class="nav_a" href="./pages/login.html">
+						<span class="licon">
+							<i class="fa-solid fa-arrow-right-to-bracket"></i>
+						</span>
+						LOG IN
+					</a>
 				</li>
 
 				<li class="navLi">
-					<a id="bagPage" class="nav_a" href="./pages/bag.html">SHOPPING BAG</a>
+
+					<a id="bagPage" class="nav_a" href="./pages/bag.html">
+						<span class="licon">
+							<i class="fa-solid fa-cart-shopping"></i>
+						</span>
+						SHOPPING BAG
+						<p id="cart-item-no">0</p>
+					</a>
 				</li>
 
 			</ul>
@@ -114,10 +133,11 @@
 		for (let i = 0; i < swiper_wrapper_class.length; i++) {
 			const wrapper = swiper_wrapper_class[i];
 			wrapper.style.cursor = "default";
-			
+
 		}
 
 	</script>
+	<script src="./scripts/bag/item_nos.js"></script>
 </body>
 
 </html>

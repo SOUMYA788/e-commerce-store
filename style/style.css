@@ -214,6 +214,28 @@ nav#departments ul#navUl li.navLi ul:hover {
 	display: flex;
 }
 
+.licon {
+	margin-right: 5px;
+}
+
+#cart-item-no {
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	display: inline-flex;
+	border-radius: 27px;
+	border: 1px solid black;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+}
+
+nav#departments ul#navUl li.navLi a:hover #cart-item-no {
+	border-color: red;
+}
+
 div#contentDiv section#sec_1 {
 	width: 100%;
 	display: flex;
@@ -261,7 +283,6 @@ div#contentDiv section#sec_1 i.img_changer:hover {
 	outline: 2px solid black;
 	transition: 0.1s;
 }
-
 
 
 /* -------------------------------------------------------INDEX------------------------------------------------------- */
@@ -852,7 +873,7 @@ div.cpl1 ul li p {
 	cursor: pointer;
 }
 
-div.cpl1 ul li p{
+div.cpl1 ul li p {
 	/* border-color: green; */
 }
 
@@ -909,12 +930,31 @@ div.cpl2 p {
 	justify-content: space-between;
 }
 
-#cartContainer #cartPaymentDetails div:last-child {
+#cartContainer #cartPaymentDetails div#cartTotalAmount {
 	padding: 10px 0;
 	border-top: 1px solid rgba(0, 0, 0, 0.5);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 	margin-top: 20px;
 	font-weight: 700;
+}
+
+#cartContainer #cartPaymentDetails div#payNow {
+	margin-top: 40px;
+}
+
+#payNow p {
+	display: inline-block;
+	margin-left: auto;
+	border: 2px solid black;
+	padding: 5px 15px;
+	cursor: pointer;
+	background-color: #C72945;
+	letter-spacing: 1px;
+	border-radius: 5px;
+}
+
+#payNow p:hover {
+	background-color: #FF0057;
 }
 
 

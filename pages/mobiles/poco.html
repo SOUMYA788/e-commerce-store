@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../../style/style.css">
 	<!-- <link rel="stylesheet" href="../../style/products.css"> -->
 	<link rel="stylesheet" href="../../style/all.min.css">
-	<title>Realme</title>
+	<title>poco</title>
 </head>
 
 <body>
@@ -21,9 +21,13 @@
 
 		<nav id="departments">
 			<ul id="navUl">
-
 				<li class="navLi">
-					<a id="homePage" class="nav_a" href="../../index.html">HOME</a>
+					<a id="homePage" class="nav_a" href="../../index.html">
+						<span class="licon">
+							<i class="fa-solid fa-house"></i>
+						</span>
+						HOME
+					</a>
 				</li>
 
 				<li class="navLi">
@@ -31,11 +35,22 @@
 				</li>
 
 				<li class="navLi">
-					<a id="loginPage" class="nav_a" href="../login.html">LOG IN</a>
+					<a id="loginPage" class="nav_a" href="../login.html">
+						<span class="licon">
+							<i class="fa-solid fa-arrow-right-to-bracket"></i>
+						</span>
+						LOG IN
+					</a>
 				</li>
 
 				<li class="navLi">
-					<a id="bagPage" class="nav_a" href="../bag.html">SHOPPING BAG</a>
+					<a id="bagPage" class="nav_a" href="../bag.html">
+						<span class="licon">
+							<i class="fa-solid fa-cart-shopping"></i>
+						</span>
+						SHOPPING BAG
+						<p id="cart-item-no">0</p>
+					</a>
 				</li>
 			</ul>
 		</nav>
@@ -50,6 +65,7 @@
 	</div>
 
 	<script type="module" src="../../scripts/mobiles.js"></script>
+	<script src="../../scripts/bag/item_nos.js"></script>
 	<script src="../../scripts/footer.js"></script>
 </body>
 

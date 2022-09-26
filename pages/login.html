@@ -9,6 +9,87 @@
 	<link rel="stylesheet" href="../style/style.css">
 
 	<style>
+		#loginSignupDiv {
+			width: 80%;
+			margin: 30px auto;
+			padding: 20px 0px;
+			font-size: 1em;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		#loginSignupDiv #loginDiv,
+		#loginSignupDiv #signupDiv {
+			width: 45%;
+		}
+
+		#loginSignupDiv h3 {
+			margin: 0 auto 20px;
+			text-align: center;
+			font-size: 1.5em;
+			color: #FF0057;
+			text-transform: uppercase;
+		}
+
+		#loginSignupDiv form#login_form,
+		#loginSignupDiv form#signin_form {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+		}
+
+		#loginSignupDiv form#login_form input,
+		#loginSignupDiv form#signin_form input {
+			width: 100%;
+			border: 1px solid rgba(0, 0, 0, 0.5);
+			outline: none;
+			margin-bottom: 20px;
+			padding: 10px;
+		}
+
+
+		#loginSignupDiv form#login_form input#login_password,
+		#loginSignupDiv form#signin_form input#signin_password {
+			margin-bottom: 20px;
+		}
+
+		#loginSignupDiv #signInBTN,
+		#loginSignupDiv #logInBTN {
+			width: 80%;
+			height: 35px;
+			outline: none;
+			border: 2px solid black;
+			background-color: #0e6307;
+			padding: 5px 10px;
+			margin: 20px auto 0;
+			cursor: pointer;
+			color: white;
+			transition: 0.1s ease;
+		}
+
+		#loginSignupDiv #signInBTN:hover,
+		#loginSignupDiv #logInBTN:hover {
+			background-color: #1dc90e;
+			color: black;
+		}
+
+		#loginSignupDiv #login_form a, 
+		#login_form a#signUpLink {
+			margin: 0 auto;
+			font-size: 1em;
+			text-decoration: none;
+			color: blue;
+		}
+
+		#login_form p{
+			text-align: center;
+			margin: 10px auto 0;
+
+		}
+
 		nav#departments li.navLi a.nav_a#loginPage {
 			color: #FF0057;
 		}
@@ -18,7 +99,7 @@
 
 <body>
 	<div id="mainDiv">
-		<nav id="topNav" >
+		<nav id="topNav">
 			<a href="../index.html">letsPURCHASE.com</a>
 			<input type="search" name="search" id="search" placeholder="SEARCH">
 		</nav>
@@ -27,7 +108,12 @@
 			<ul id="navUl">
 
 				<li class="navLi">
-					<a id="homeLink" class="nav_a" href="../index.html">HOME</a>
+					<a id="homePage" class="nav_a" href="../index.html">
+						<span class="licon">
+							<i class="fa-solid fa-house"></i>
+						</span>
+						HOME
+					</a>
 				</li>
 
 				<li class="navLi">
@@ -35,20 +121,66 @@
 				</li>
 
 				<li class="navLi">
-					<a id="loginPage" class="nav_a" href="./login.html">LOG IN</a>
+					<a id="loginPage" class="nav_a" href="./login.html">
+						<span class="licon">
+							<i class="fa-solid fa-arrow-right-to-bracket"></i>
+						</span>
+						LOG IN
+					</a>
 				</li>
 
 				<li class="navLi">
-					<a id="bagPage" class="nav_a" href="./bag.html">SHOPPING BAG</a>
+					<a id="bagPage" class="nav_a" href="./bag.html">
+						<span class="licon">
+							<i class="fa-solid fa-cart-shopping"></i>
+						</span>
+						SHOPPING BAG
+						<p id="cart-item-no">0</p>
+					</a>
 				</li>
 
 			</ul>
 		</nav>
 
-		<div id="loginDiv"></div>
+		<div class="hr_2px"></div>
+
+		<div id="loginSignupDiv">
+			<div class="loginSignup" id="loginDiv">
+				<h3>LOGIN</h3>
+				<div id="login">
+					<form id="login_form" action="#" method="post">
+						<input type="text" id="login_user_name" placeholder="User Name">
+
+						<input type="password" id="login_password" placeholder="Password">
+
+						<a href="#">forget password</a>
+
+						<button type="submit" id="logInBTN">Log In</button>
+
+						<p>Don't have an account? <span ><a href="#" id="signUpLink">Signup</a></span> </p>
+					</form>
+				</div>
+			</div>
+
+			<div class="loginSignup" id="signupDiv">
+				<h3>Sign Up</h3>
+				<div id="signin">
+					<form id="signin_form" action="#" method="post">
+						<input type="text" id="signin_user-name" placeholder="Enter Your Name">
+
+						<input type="text" id="signin_user_name" placeholder="Enter User-Name">
+
+						<input type="password" id="signin_password" placeholder="Enter a Strong Password">
+
+						<button type="submit" id="signInBTN">Sign In</button>
+					</form>
+				</div>
+			</div>
+		</div>
 
 		<footer id="footer"></footer>
 	</div>
+	<script src="../scripts/bag/item_nos.js"></script>
 	<script src="../scripts/footer.js"></script>
 </body>
 

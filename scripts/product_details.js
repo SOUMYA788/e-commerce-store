@@ -154,4 +154,6 @@ add_to_cart.addEventListener("click", (e) => {
 		cartData.push(data)
 		localStorage.setItem("cart_item",JSON.stringify(cartData))
 	}
+
+	window.location.reload()
 })
