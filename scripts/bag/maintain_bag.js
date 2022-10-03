@@ -11,13 +11,22 @@ let manageCart = () => {
 	const cartProductList = document.querySelector("#cartProductList")
 
 	let cartProductData = []
-	if (localStorage.getItem("cart_item") != undefined || localStorage.getItem("cart_item") != '') {
+
+	let cartPaymentDetails = document.querySelector("#cartPaymentDetails")
+	if (localStorage.getItem("cart_item").toString() !== "[]") {
+		// console.log("data found");
+		cartPaymentDetails.style.display = "block"
 		cartProductData = JSON.parse(localStorage.getItem("cart_item"))
+	} else {
+		cartPaymentDetails.style.display = "none"
+		// console.log("data not available");
 	}
 
 	let cartProductListInnerHTML = ""
 
-	if (cartProductData.length != 0) {
+
+	if (cartProductData.length != null || cartProductData.length != 0) {
+
 		cartProductData.forEach((cpd) => {
 			cartProductListInnerHTML += `
 		<div class="cpl">
@@ -47,15 +56,13 @@ let manageCart = () => {
 		</div>
 		`
 		});
+
 	}
 
 	cartProductList.innerHTML = cartProductListInnerHTML;
 
 
-
-
 	// Maintain Total Amount
-
 	let totalProductValue;
 
 	const maintainTotalValue = () => {
@@ -84,11 +91,14 @@ let manageCart = () => {
 			discount.innerText = ((eval(totalProductValue) * 30) / 100)
 			payableAmt.innerText = Math.round(eval(totalProductValue) - discount.innerText - document.querySelector("#delCh").innerText);
 		}
+
+		if (discount.innerText == "NaN" || discount.innerText == "undefined") {
+			discount.innerText = "0"
+			payableAmt.innerText = "0"
+		}
 	}
 
 	maintainTotalValue();
-
-
 
 
 	// update products status which is inside of bag
@@ -131,9 +141,7 @@ let manageCart = () => {
 		}
 	}
 
-
 	// REMOVE FROM CART
-
 	let removeCart = document.querySelectorAll(".cartRemove");
 	removeCart.forEach((rc, rcCount) => {
 		rc.addEventListener("click", () => {
@@ -149,15 +157,18 @@ let manageCart = () => {
 	});
 
 
-	// ACTIVATE PAY NOW BTN
+	// ACTIVATE PAYMENT FULL INFO
 
+
+
+	// ACTIVATE PAY NOW BTN
 	let payNowBTN = document.querySelector("#payNowBtn");
-	payNowBTN.addEventListener("mousedown", (e) => { 
+	payNowBTN.addEventListener("mousedown", (e) => {
 		e.stopPropagation()
 		payNowBTN.style.backgroundColor = "#C72945";
 	})
 
-	payNowBTN.addEventListener("mouseup", (e) => { 
+	payNowBTN.addEventListener("mouseup", (e) => {
 		e.stopPropagation()
 		payNowBTN.style.backgroundColor = "#FF0057";
 	})
