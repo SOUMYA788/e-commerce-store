@@ -146,12 +146,33 @@ add_to_cart.addEventListener("click", (e) => {
 	if (localStorage.getItem("cart_item") == undefined || localStorage.getItem("cart_item") == '') {
 		cartData.push(data)
 		localStorage.setItem("cart_item", JSON.stringify(cartData))
+		cartData.forEach(curData => {
+			if (curData) {
+				cartData.pop()
+			}
+		});
+
 	} else {
 		let prevData = JSON.parse(localStorage.getItem("cart_item"))
+
+		let dataPresent=false;
 		prevData.forEach(pd => {
 			cartData.push(pd)
 		});
-		cartData.push(data)
+		cartData.forEach(curData => {
+			if (curData.name!==data.name) {
+				dataPresent = false
+			}else{
+				dataPresent = true
+			}
+		});
+
+		if (!dataPresent) {
+			cartData.push(data)
+			console.log("Data Not Present, So its updated");
+		}else{
+			console.log("Sorry can't add, its already present");
+		}
 		localStorage.setItem("cart_item",JSON.stringify(cartData))
 	}
 

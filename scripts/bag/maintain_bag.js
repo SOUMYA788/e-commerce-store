@@ -26,35 +26,34 @@ let manageCart = () => {
 
 
 	if (cartProductData.length != null || cartProductData.length != 0) {
-
 		cartProductData.forEach((cpd) => {
 			cartProductListInnerHTML += `
-		<div class="cpl">
-			<div class="cpl1">
-				<div>
-					<img src="${cpd.img}" alt="image">
-				</div>
-				<ul>
-					<li>
-						<P class="changeNegQTY">-</P>
-					</li>
-					<li>
-						<input type="text" name="qty" class="cartProductQTY" value="1">
-					</li>
-					<li>
-						<P class="changePosQTY">+</P>
-					</li>
-				</ul>
-			</div>
+				<div class="cpl">
+					<div class="cpl1">
+						<div>
+							<img src="${cpd.img}" alt="image">
+						</div>
+						<ul>
+							<li>
+								<P class="changeNegQTY">-</P>
+							</li>
+							<li>
+								<input type="text" name="qty" class="cartProductQTY" value="1">
+							</li>
+							<li>
+								<P class="changePosQTY">+</P>
+							</li>
+						</ul>
+					</div>
 
-			<div class="cpl2">
-				<p>${cpd.name}</p>
-				<p>${cpd.price}</p>
-				<p>Approximate one 4 working days after you place order</p>
-				<p class="cartRemove">REMOVE</p>
-			</div>
-		</div>
-		`
+					<div class="cpl2">
+						<p>${cpd.name}</p>
+						<p>${cpd.price}</p>
+						<p>Approximate one 4 working days after you place order</p>
+						<p class="cartRemove">REMOVE</p>
+					</div>
+				</div>
+				`
 		});
 
 	}
@@ -146,9 +145,6 @@ let manageCart = () => {
 	removeCart.forEach((rc, rcCount) => {
 		rc.addEventListener("click", () => {
 			console.log(rc);
-			/*
-				now we have to find out a technique that can help us to delete a perticular object in any index from a list.
-			*/
 			cartProductData.splice(rcCount, 1)
 			localStorage.setItem("cart_item", JSON.stringify(cartProductData))
 			manageCart()
