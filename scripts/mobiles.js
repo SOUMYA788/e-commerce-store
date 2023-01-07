@@ -8,7 +8,7 @@ const sid = (target, targetElement, data) => {
 					<div class="stocks ${e.className}">
 
 						<div class="productImg">
-							<img src="${`../../${e.img}`}" alt="${e.name}" />
+							<img src="../../${e.img}" alt="${e.name}" />
 						</div>
 
 						<div class="productInfo">

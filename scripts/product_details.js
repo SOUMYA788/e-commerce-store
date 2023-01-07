@@ -5,6 +5,8 @@ let data = JSON.parse(localStorage.getItem("singleProductDetails"))
 if (Object.keys(data).length != 0 || localStorage.getItem("singleProductDetails") != null) {
 
 	let dataImg = `../${data.img}`;
+	console.log("dataImg");
+	console.log(dataImg);
 	let galleryArr = Object.entries(data.gallery);
 	let otherDetailsObj = Object.entries(data.other_details);
 
@@ -34,7 +36,7 @@ if (Object.keys(data).length != 0 || localStorage.getItem("singleProductDetails"
 	
 		<div class="stockDetailsCol col1">
 			<div id="col1DisplayImg">
-				<img id="mainDisplayImg" class="displayImg" src="../${dataImg}" alt="${data.name}">
+				<img id="mainDisplayImg" class="displayImg" src="${dataImg}" alt="${data.name}">
 			</div>
 			
 			<div class="gallery">
