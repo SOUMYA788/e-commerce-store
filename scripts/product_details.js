@@ -1,121 +1,107 @@
 // import { jsonExport } from "./modules/stock_details.js";
 let data = JSON.parse(localStorage.getItem("singleProductDetails"))
-console.log(data);
 
-let dataHolder = document.getElementById("stockDetails");
 
-let dataHolderInnerHTML = `
+if (Object.keys(data).length != 0 || localStorage.getItem("singleProductDetails") != null) {
 
-	<div class="stockDetailsCol col1">
-		<div id="col1DisplayImg">
-			<img id="mainDisplayImg" class="displayImg" src="${data.img}" alt="${data.name}">
-		</div>
-		
-		<div class="gallery">
-			<ul class="galleryImgList">
-				<li>
-					<img class = "galleryImg" src="${data.gallery.img1}" alt="${data.name}">
-				</li>
+	let dataImg = `../${data.img}`;
+	let galleryArr = Object.entries(data.gallery);
+	let otherDetailsObj = Object.entries(data.other_details);
 
-				<li>
-					<img class = "galleryImg" src="${data.gallery.img2}" alt="${data.name}">
-				</li>
+	let galleryStr = "";
+	let otherDetailsStr = "";
 
-				<li>
-				<img class = "galleryImg" src="${data.gallery.img3}" alt="${data.name}">
-				</li>
-			</ul>
-		</div>
+	for (let [key, value] of galleryArr) {
+		galleryStr += `
+			<li>
+				<img class = "galleryImg" src="../${value}" alt="${data.name}">
+			</li>
+		`
+	}
 
-		<div id="payments">
-			<span>
-				<a id="add_to_cart" href="#">
-					<i class="fa-solid fa-cart-shopping"></i> Add to Cart
-				</a>
-			</span>
+	for (let [key, value] of otherDetailsObj) {
+		otherDetailsStr += `
+			<tr class="row">
+				<td class="tdr1">${key}</td>
+				<td class="tdr2">${value}</td>
+			</tr>
+		`
+	}	
 
-			<span>
-				<a id="Buy_Now" href="#"><i class="fa-solid fa-credit-card"></i> Pay Now</a>
-			</span>
-		</div>
-	</div>
+	let dataHolder = document.getElementById("stockDetails");
 
-	<div class="stockDetailsCol col2">
-		<h3>${data.name}</h3>
-		<h4>${data.price}</h4>
-
-		<div class="stockDetailsColDiv">
-			<h3>Details</h3>
-			<ul>
-				<li>${data.warrenty}</li>
-				<li>${data.storage}</li>
-				<li>${data.display}</li>
-				<li>${data.cammera}</li>
-				<li>${data.battery}</li>
-				<li>${data.processor}</li>
-			</ul>
-		</div>
-
-		<div class="stockDetailsColDiv">
-			<h3>Payment Mode</h3>
-
-			<div>
-				<label for="COD">Cash on Delevery</label>
-				<input type="radio" id="cash_on_delevery" name="COD">
+	let dataHolderInnerHTML = `
+	
+		<div class="stockDetailsCol col1">
+			<div id="col1DisplayImg">
+				<img id="mainDisplayImg" class="displayImg" src="../${dataImg}" alt="${data.name}">
 			</div>
-
-			<div>
-				<label for="lname">PAY WITH CARDS</label>
-				<input type="radio" id="lname" name="COD" checked>
+			
+			<div class="gallery">
+				<ul class="galleryImgList">
+					${galleryStr}
+				</ul>
+			</div>
+	
+			<div id="payments">
+				<span>
+					<a id="add_to_cart" href="#">
+						<i class="fa-solid fa-cart-shopping"></i> Add to Cart
+					</a>
+				</span>
+	
+				<span>
+					<a id="Buy_Now" href="#"><i class="fa-solid fa-credit-card"></i> Pay Now</a>
+				</span>
 			</div>
 		</div>
-
-		<div class="stockDetailsColDiv">
-			<h3>Specification</h3>
-
-			<table>
-				<tbody>
-					<tr class="row">
-						<td class="tdr1">${Object.keys(Object.values(data)[12])[0]}</td>
-						<td class="tdr2">${Object.values(Object.values(data)[12])[0]}</td>
-					</tr>
-
-					<tr class="row">
-						<td class="tdr1">${Object.keys(Object.values(data)[12])[1]}</td>
-						<td class="tdr2">${Object.values(Object.values(data)[12])[1]}</td>
-					</tr>
-
-					<tr class="row">
-						<td class="tdr1">${Object.keys(Object.values(data)[12])[2]}</td>
-						<td class="tdr2">${Object.values(Object.values(data)[12])[2]}</td>
-					</tr>
-
-					<tr class="row">
-						<td class="tdr1">${Object.keys(Object.values(data)[12])[3]}</td>
-						<td class="tdr2">${Object.values(Object.values(data)[12])[3]}</td>
-					</tr>
-
-					<tr class="row">
-						<td class="tdr1">${Object.keys(Object.values(data)[12])[4]}</td>
-						<td class="tdr2">${Object.values(Object.values(data)[12])[4]}</td>
-					</tr>
-
-					<tr class="row">
-						<td class="tdr1">${Object.keys(Object.values(data)[12])[5]}</td>
-						<td class="tdr2">${Object.values(Object.values(data)[12])[5]}</td>
-					</tr>
-
-					<tr class="row">
-						<td class="tdr1">${Object.keys(Object.values(data)[12])[6]}</td>
-						<td class="tdr2">${Object.values(Object.values(data)[12])[6]}</td>
-					</tr>
-				</tbody>
-			</table>
+	
+		<div class="stockDetailsCol col2">
+			<h3>${data.name}</h3>
+			<h4>${data.price}</h4>
+	
+			<div class="stockDetailsColDiv">
+				<h3>Details</h3>
+				<ul>
+					<li>${data.warrenty}</li>
+					<li>${data.storage}</li>
+					<li>${data.display}</li>
+					<li>${data.cammera}</li>
+					<li>${data.battery}</li>
+					<li>${data.processor}</li>
+				</ul>
+			</div>
+	
+			<div class="stockDetailsColDiv">
+				<h3>Payment Mode</h3>
+	
+				<div>
+					<label for="COD">Cash on Delevery</label>
+					<input type="radio" id="cash_on_delevery" name="COD">
+				</div>
+	
+				<div>
+					<label for="lname">PAY WITH CARDS</label>
+					<input type="radio" id="lname" name="COD" checked>
+				</div>
+			</div>
+	
+			<div class="stockDetailsColDiv">
+				<h3>Specification</h3>
+	
+				<table>
+					<tbody>
+						${otherDetailsStr}
+					</tbody>
+				</table>
+			</div>
 		</div>
-	</div>
-`
+	`
 
-dataHolder.innerHTML = dataHolderInnerHTML;
+	dataHolder.innerHTML = dataHolderInnerHTML;
+}
+
+
 
 
 let galleryImg = document.getElementsByClassName("galleryImg");
@@ -155,14 +141,14 @@ add_to_cart.addEventListener("click", (e) => {
 	} else {
 		let prevData = JSON.parse(localStorage.getItem("cart_item"))
 
-		let dataPresent=false;
+		let dataPresent = false;
 		prevData.forEach(pd => {
 			cartData.push(pd)
 		});
 		cartData.forEach(curData => {
-			if (curData.name!==data.name) {
+			if (curData.name !== data.name) {
 				dataPresent = false
-			}else{
+			} else {
 				dataPresent = true
 			}
 		});
@@ -170,10 +156,10 @@ add_to_cart.addEventListener("click", (e) => {
 		if (!dataPresent) {
 			cartData.push(data)
 			console.log("Data Not Present, So its updated");
-		}else{
+		} else {
 			console.log("Sorry can't add, its already present");
 		}
-		localStorage.setItem("cart_item",JSON.stringify(cartData))
+		localStorage.setItem("cart_item", JSON.stringify(cartData))
 	}
 
 	window.location.reload()

@@ -8,7 +8,7 @@ const sid = (target, targetElement, data) => {
 					<div class="stocks ${e.className}">
 
 						<div class="productImg">
-							<img src="${e.img}" alt="${e.name}" />
+							<img src="${`../../${e.img}`}" alt="${e.name}" />
 						</div>
 
 						<div class="productInfo">
@@ -44,11 +44,11 @@ const realmeMobiles = [
 	{
 		id: "0",
 		className: "realmeMobile",
-		img: "../img/mobiles/realme/01/01.webp",
+		img: "img/mobiles/realme/01/01.webp",
 		gallery: {
-			img1: "../img/mobiles/realme/01/02.webp",
-			img2: "../img/mobiles/realme/01/03.webp",
-			img3: "../img/mobiles/realme/01/04.webp"
+			img1: "img/mobiles/realme/01/02.webp",
+			img2: "img/mobiles/realme/01/03.webp",
+			img3: "img/mobiles/realme/01/04.webp"
 		},
 		name: "realme C31 (Light Silver)",
 		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
@@ -73,11 +73,11 @@ const realmeMobiles = [
 	{
 		id: "1",
 		className: "realmeMobile",
-		img: "../img/mobiles/realme/02/01.webp",
+		img: "img/mobiles/realme/02/01.webp",
 		gallery: {
-			img1: "../img/mobiles/realme/02/02.webp",
-			img2: "../img/mobiles/realme/02/03.webp",
-			img3: "../img/mobiles/realme/02/04.webp"
+			img1: "img/mobiles/realme/02/02.webp",
+			img2: "img/mobiles/realme/02/03.webp",
+			img3: "img/mobiles/realme/02/04.webp"
 		},
 		name: "realme C31 (Dark Green)",
 		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
@@ -102,11 +102,11 @@ const realmeMobiles = [
 	{
 		id: "2",
 		className: "realmeMobile",
-		img: "../../img/mobiles/realme/03/01.webp",
+		img: "img/mobiles/realme/03/01.webp",
 		gallery: {
-			img1: "../img/mobiles/realme/03/02.webp",
-			img2: "../img/mobiles/realme/03/03.webp",
-			img3: "../img/mobiles/realme/03/04.webp"
+			img1: "img/mobiles/realme/03/02.webp",
+			img2: "img/mobiles/realme/03/03.webp",
+			img3: "img/mobiles/realme/03/04.webp"
 		},
 		name: "realme C30 (Bamboo Green)",
 		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
@@ -131,11 +131,11 @@ const realmeMobiles = [
 	{
 		id: "3",
 		className: "realmeMobile",
-		img: "../img/mobiles/realme/04/01.webp",
+		img: "img/mobiles/realme/04/01.webp",
 		gallery: {
-			img1: "../img/mobiles/realme/04/02.webp",
-			img2: "../img/mobiles/realme/04/03.webp",
-			img3: "../img/mobiles/realme/04/04.webp"
+			img1: "img/mobiles/realme/04/02.webp",
+			img2: "img/mobiles/realme/04/03.webp",
+			img3: "img/mobiles/realme/04/04.webp"
 		},
 		name: "realme 9 (Sunburst Gold)",
 		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 256 GB",
@@ -160,11 +160,11 @@ const realmeMobiles = [
 	{
 		id: "4",
 		className: "realmeMobile",
-		img: "../img/mobiles/realme/05/01.webp",
+		img: "img/mobiles/realme/05/01.webp",
 		gallery: {
-			img1: "../img/mobiles/realme/05/02.webp",
-			img2: "../img/mobiles/realme/05/03.webp",
-			img3: "../img/mobiles/realme/05/04.webp"
+			img1: "img/mobiles/realme/05/02.webp",
+			img2: "img/mobiles/realme/05/03.webp",
+			img3: "img/mobiles/realme/05/04.webp"
 		},
 		name: "realme 9 Pro+ 5G (Aurora Green)",
 		storage: "8 GB RAM | 256 GB ROM",
@@ -190,11 +190,11 @@ const pocoMobiles = [
 	{
 		id: "0",
 		className: "pocoMobile",
-		img: "../img/mobiles/poco/01/01.webp",
+		img: "img/mobiles/poco/01/01.webp",
 		gallery: {
-			img1: "../img/mobiles/poco/01/02.webp",
-			img2: "../img/mobiles/poco/01/03.webp",
-			img3: "../img/mobiles/poco/01/04.webp"
+			img1: "img/mobiles/poco/01/02.webp",
+			img2: "img/mobiles/poco/01/03.webp",
+			img3: "img/mobiles/poco/01/04.webp"
 		},
 		name: "POCO M3 Pro 5G (Black)",
 		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
@@ -219,12 +219,12 @@ const pocoMobiles = [
 	{
 		id: "1",
 		className: "pocoMobile",
-		img: "../img/mobiles/poco/02/01.webp",
+		img: "img/mobiles/poco/02/01.webp",
 		name: "POCO M3 Pro 5G (Yellow)",
 		gallery: {
-			img1: "../img/mobiles/poco/02/02.webp",
-			img2: "../img/mobiles/poco/02/03.webp",
-			img3: "../img/mobiles/poco/02/04.webp"
+			img1: "img/mobiles/poco/02/02.webp",
+			img2: "img/mobiles/poco/02/03.webp",
+			img3: "img/mobiles/poco/02/04.webp"
 		},
 		storage: "4 GB RAM | 64 GB ROM | Expandable Upto 1 TB",
 		display: "16.51 cm (6.5 inch) Full HD+ Display",
@@ -248,11 +248,11 @@ const pocoMobiles = [
 	{
 		id: "2",
 		className: "pocoMobile",
-		img: "../img/mobiles/poco/03/01.webp",
+		img: "img/mobiles/poco/03/01.webp",
 		gallery: {
-			img1: "../img/mobiles/poco/03/02.webp",
-			img2: "../img/mobiles/poco/03/03.webp",
-			img3: "../img/mobiles/poco/03/04.webp"
+			img1: "img/mobiles/poco/03/02.webp",
+			img2: "img/mobiles/poco/03/03.webp",
+			img3: "img/mobiles/poco/03/04.webp"
 		},
 		name: "POCO M3 Pro 5G (Cool Blue)",
 		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
@@ -300,7 +300,5 @@ for (let i = 0; i < stocks.length; i++) {
 		}
 	})
 }
-
-
 
 export { realmeMobiles, pocoMobiles }
