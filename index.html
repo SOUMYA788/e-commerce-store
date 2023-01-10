@@ -19,53 +19,50 @@
 <body>
 	<div id="mainDiv">
 		<nav id="topNav">
-			<a href="./index.html">letsPURCHASE.com</a>
-			<input type="search" name="search" id="search" placeholder="SEARCH">
+			<div class="topNavDiv" id="top_main_nav">
+				<a href="./index.html">letsPURCHASE.com</a>
+				<input type="search" name="search" id="search" placeholder="SEARCH">
+			</div>
+
+			<div class="topNavDiv" id="departments">
+
+				<ul id="navUl">
+
+					<li class="navLi">
+						<a id="homePage" class="nav_a" href="./index.html">
+							<span class="licon">
+								<i class="fa-solid fa-house"></i>
+							</span>
+							HOME
+						</a>
+					</li>
+
+					<li class="navLi">
+						<a id="productPage" class="nav_a" href="./pages/products.html">PRODUCTS</a>
+					</li>
+
+					<li class="navLi">
+						<a id="loginPage" class="nav_a" href="./pages/login.html">
+							<span class="licon">
+								<i class="fa-solid fa-arrow-right-to-bracket"></i>
+							</span>
+							LOG IN
+						</a>
+					</li>
+
+					<li class="navLi">
+						<a id="bagPage" class="nav_a" href="./pages/bag.html">
+							<span class="licon">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</span>
+							SHOPPING BAG
+							<p id="cart-item-no">0</p>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</nav>
 
-		<nav id="departments">
-			<ul id="navUl">
-
-				<li class="navLi">
-					<a id="homePage" class="nav_a" href="./index.html">
-						<span class="licon">
-							<i class="fa-solid fa-house"></i>
-						</span>
-						HOME
-					</a>
-				</li>
-
-				<li class="navLi">
-					<a id="productPage" class="nav_a" href="./pages/products.html">
-						PRODUCTS
-					</a>
-				</li>
-
-				<li class="navLi">
-					<a id="loginPage" class="nav_a" href="./pages/login.html">
-						<span class="licon">
-							<i class="fa-solid fa-arrow-right-to-bracket"></i>
-						</span>
-						LOG IN
-					</a>
-				</li>
-
-				<li class="navLi">
-
-					<a id="bagPage" class="nav_a" href="./pages/bag.html">
-						<span class="licon">
-							<i class="fa-solid fa-cart-shopping"></i>
-						</span>
-						SHOPPING BAG
-						<p id="cart-item-no">0</p>
-					</a>
-				</li>
-
-			</ul>
-		</nav>
-
-
-		<div class="hr_2px"></div>
 
 		<div id="contentDiv">
 
@@ -81,7 +78,6 @@
 				<div class="swiper swiper1">
 
 					<div class="swiper-wrapper">
-
 						<div class="imgDiv swiper-slide">
 							<img class="furImg" src="./img/mobiles/01.jpg" alt="img 1">
 						</div>
@@ -93,11 +89,6 @@
 						<div class="imgDiv swiper-slide">
 							<img class="furImg" src="./img/desktop/01.jpg" alt="img 3">
 						</div>
-
-						<div class="imgDiv swiper-slide">
-							<img class="furImg" src="./img/furniture/02.jpg" alt="img 3">
-						</div>
-
 					</div>
 
 				</div>

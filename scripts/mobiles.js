@@ -1,42 +1,77 @@
-import { clickStock } from "./modules/stock_details.js";
-
 // clickStocks(${e.className}, ${e.id})
-const sid = (target, targetElement, data) => {
-	try {
-		data.forEach(e => {
-			targetElement += `
-					<div class="stocks ${e.className}">
+const sid = (target, data) => {
+	if (target != null && data != null) {
+		try {
+			let targetInnerHTML = ""
+			data.forEach((element, index) => {
 
-						<div class="productImg">
-							<img src="../../${e.img}" alt="${e.name}" />
+				if (index < (data.length - 1)) {
+					targetInnerHTML += `
+						<div class="hr_2px bg_black_20" style="width: 100%;"></div>
+
+						<div class="stocks ${element.className}">
+
+							<div class="productImg">
+								<img src="../${element.img}" alt="${element.name}" />
+							</div>
+
+							<div class="productInfo">
+								<h2>${element.name}</h2>
+								<ul class="productDetails">
+									<li>${element.storage}</li>
+									<li>${element.display}</li>
+									<li>${element.cammera}</li>
+									<li>${element.battery}</li>
+									<li>${element.processor}</li>
+									<li>${element.warrenty}</li>
+								</ul>
+							</div>
+
+							<div class="pricing">
+								<p class="current_price">₹${element.price}</p>
+							</div>
+
+						</div>
+					`
+				} else {
+					targetInnerHTML += `
+						<div class="hr_2px bg_black_20" style="width: 100%;"></div>
+
+						<div class="stocks ${element.className}">
+
+							<div class="productImg">
+								<img src="../${element.img}" alt="${element.name}" />
+							</div>
+
+							<div class="productInfo">
+								<h2>${element.name}</h2>
+								<ul class="productDetails">
+									<li>${element.storage}</li>
+									<li>${element.display}</li>
+									<li>${element.cammera}</li>
+									<li>${element.battery}</li>
+									<li>${element.processor}</li>
+									<li>${element.warrenty}</li>
+								</ul>
+							</div>
+
+							<div class="pricing">
+								<p class="current_price">₹${element.price}</p>
+							</div>
+
 						</div>
 
-						<div class="productInfo">
-							<h2>${e.name}</h2>
-							<ul class="productDetails">
-								<li>${e.storage}</li>
-								<li>${e.display}</li>
-								<li>${e.cammera}</li>
-								<li>${e.battery}</li>
-								<li>${e.processor}</li>
-								<li>${e.warrenty}</li>
-							</ul>
-						</div>
+						<div class="hr_2px bg_black_20" style="width: 100%;"></div>
+					`
+				}
+			})
+			target.innerHTML = targetInnerHTML;
+		} catch (error) {
+			console.log(error);
+			console.log("AN ERROR OCCURED");
+		}
 
-						<div class="pricing">
-							<p class="current_price">${e.price}</p>
-						</div>
-
-					</div>
-
-					<div class="hr_2px bg_black_20" style="width: 100%;"></div>
-				`
-		})
-		target.innerHTML = targetElement;
-	} catch (error) {
-		console.log("AN ERROR OCCURED");
 	}
-
 }
 
 
@@ -57,7 +92,7 @@ const realmeMobiles = [
 		battery: "5000 mAh Battery",
 		processor: "Unisoc T612 Processor",
 		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹8,299",
+		price: "8,299",
 		calc_price: 8299,
 		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
@@ -86,7 +121,7 @@ const realmeMobiles = [
 		battery: "5000 mAh Battery",
 		processor: "Unisoc T612 Processor",
 		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹8,299",
+		price: "8,299",
 		calc_price: 8299,
 		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
@@ -115,7 +150,7 @@ const realmeMobiles = [
 		battery: "5000 mAh Lithium Ion Battery",
 		processor: "Unisoc T612 Processor",
 		warrenty: "1 Year Manufacturer Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹7,999",
+		price: "7,999",
 		calc_price: 7999,
 		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
@@ -144,7 +179,7 @@ const realmeMobiles = [
 		battery: "5000 mAh Lithium Ion Battery",
 		processor: "Qualcomm Snapdragon 680 Processor",
 		warrenty: "1 Year Manufacturer Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹14,499",
+		price: "14,499",
 		calc_price: 14499,
 		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
@@ -173,7 +208,7 @@ const realmeMobiles = [
 		battery: "4500 mAh Li-ion Battery",
 		processor: "Mediatek Dimensity 920 Processor",
 		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹26,999",
+		price: "26,999",
 		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
 			Color: "light Silver",
@@ -203,7 +238,7 @@ const pocoMobiles = [
 		battery: "5000 mAh Lithium-ion Polymer Battery",
 		processor: "MediaTek Dimensity 700 Processor",
 		warrenty: "1 Year Warranty for Handset, 6 Months for Accessories",
-		price: "₹16,499",
+		price: "16,499",
 		calc_price: 16499,
 		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
@@ -232,7 +267,7 @@ const pocoMobiles = [
 		battery: "5000 mAh Lithium-ion Polymer Battery",
 		processor: "MediaTek Dimensity 700 Processor",
 		warrenty: "1 Year Warranty for Handset, 6 Months for Accessories",
-		price: "₹14,499",
+		price: "14,499",
 		calc_price: 14499,
 		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
@@ -261,7 +296,7 @@ const pocoMobiles = [
 		battery: "5000 mAh Lithium-ion Polymer Battery",
 		processor: "MediaTek Dimensity 700 Processor",
 		warrenty: "1 Year Warranty for Handset, 6 Months for Accessories",
-		price: "₹16,499",
+		price: "16,499",
 		calc_price: 16499,
 		other_details: {
 			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
@@ -275,30 +310,60 @@ const pocoMobiles = [
 	}
 ]
 
-const realmeHolder = document.getElementById("realmeDiv")
-let realmeHolderInnerHTML = ""
+let allMobiles = [].concat(realmeMobiles, pocoMobiles);
 
-const pocoHolder = document.getElementById("pocoDiv")
-let pocoHolderInnerHTML = ""
+allMobiles.forEach(element => {
+	element.className = "mobileDivRow";
+});
 
-sid(realmeHolder, realmeHolderInnerHTML, realmeMobiles)
+const mobiles = document.getElementById("mobiles")
 
-sid(pocoHolder, pocoHolderInnerHTML, pocoMobiles)
-
-
-let stocks = document.getElementsByClassName("stocks")
+sid(mobiles, allMobiles)
 
 
-for (let i = 0; i < stocks.length; i++) {
-	const stock = stocks[i];
-	console.log(stock, i);
-	stock.addEventListener("click", () => {
-		if (stock.classList.contains("realmeMobile")) {
-			clickStock("realmeMobile", i)
-		} else if (stock.classList.contains("pocoMobile")) {
-			clickStock("pocoMobile", i)
+// FILTER PROCESS...
+
+let priceScale = document.querySelector("#priceScale")
+let priceScaleValue = parseInt(priceScale.value);
+
+// FILTER BY PRICE
+priceScale.addEventListener("change", () => {
+
+	document.querySelector("#ending_price").innerText = `₹${priceScale.value}`
+
+	priceScaleValue = parseInt(priceScale.value);
+
+	let priceFilteredStock = allMobiles.filter((value, index) => {
+		let mobilePriceStr = value.price;
+		let mobilePrice = parseInt(`${mobilePriceStr.split(",")[0]}${mobilePriceStr.split(",")[1]}`);
+		if (mobilePrice <= priceScaleValue) {
+			return value
 		}
-	})
+	});
+	sid(mobiles, priceFilteredStock)
+})
+
+// FILTER BY NAME
+
+const realmeFilterCheckbox = document.querySelector("#realmeFilterCheckbox");
+const pocoFilterCheckbox = document.querySelector("#pocoFilterCheckbox");
+const oppoFilterCheckbox = document.querySelector("#oppoFilterCheckbox");
+const vivoFilterCheckbox = document.querySelector("#vivoFilterCheckbox");
+const samsungFilterCheckbox = document.querySelector("#samsungFilterCheckbox");
+
+
+
+
+// click any item for further process as user...
+let setSelectedItem = (itemDataArr) => {
+	let stocks = document.querySelectorAll(".stocks")
+
+	stocks.forEach((element, elementIndex) => {
+		element.addEventListener("click", () => {
+			localStorage.setItem("singleProductDetails", JSON.stringify(itemDataArr[elementIndex]))
+			window.location = "./product_details.html"
+		})
+	});
 }
 
-export { realmeMobiles, pocoMobiles }
+setSelectedItem(allMobiles)

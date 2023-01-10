@@ -1,5 +1,6 @@
 /* -------------------------------------------------FONT FAMILY LIST------------------------------------------------- */
 
+
 @font-face {
 	font-family: poppins;
 	src: url(../fonts/Poppins.ttf);
@@ -107,52 +108,91 @@
 /* ------------------------------------------------MAIN CONTAINER------------------------------------------------ */
 
 #mainDiv {
-	width: 100%;
-	font-family: poppins, serif;
-	font-size: calc((1vw + 16px)/2);
+    width: 100%;
+    font-family: poppins, serif;
+    font-size: calc((1vw + 16px)/2);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-nav#topNav {
-	width: 100%;
-	height: 65px;
-	padding: 0 1%;
-	background-color: #FF0057;
-	border: 1px solid black;
-	color: black;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	position: fixed;
-	top: 0;
+
+nav#topNav{
+    width: 100%;
+    font-family: rubik, serif;
+    font-size: 0.9rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+	border-bottom: 1px solid black;
 	z-index: 100;
 }
 
-nav#topNav input#search {
-	width: 300px;
-	height: 65%;
-	border: none;
-	outline: none;
-	padding: 0 5px;
-	background-color: #e72560;
-	color: white;
-	font-size: 15px;
+nav#topNav div.topNavDiv{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding:1% 2%;
 }
 
-#search::placeholder {
-	color: #dddddd;
+nav#topNav div:first-child{
+	background: #ff0057;
 }
 
-nav#topNav a {
+nav#topNav div:first-child a{
 	text-decoration: none;
 	color: black;
 }
 
-nav#departments {
-	margin-top: 70px;
-	padding: 1% 0;
+nav#topNav div:first-child input{
+	outline: none;
+	border: 1px solid black;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: rgba(0, 0, 0, 0.272);
+	color: white;
 }
 
-nav#departments ul#navUl {
+nav#topNav div:first-child input::placeholder{
+	color: white;
+	letter-spacing: 2px;
+}
+
+nav#topNav div:nth-child(2){
+	background-color: white;
+}
+
+
+nav#topNav div#departments div#dashBTN {
+	width: 30px;
+	height: 21px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	z-index: 1;
+	background: transparent;
+	padding: 0;
+}
+
+div#dashBTN span.dash {
+	display: block;
+	background: rgb(255 0 87);
+	height: 5px;
+	width: 100%;
+	border-radius: 25px;
+}
+
+div#dashBTN.dashBTNActive span.dash{
+	background: rgb(200 0 0);
+}
+
+div#departments ul#navUl {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -160,18 +200,18 @@ nav#departments ul#navUl {
 	text-align: center;
 }
 
-nav#departments ul#navUl li.navLi {
+div#departments ul#navUl li.navLi {
 	width: calc(100%/4);
 	list-style: none;
 }
 
-nav#departments ul#navUl li.navLi a {
+div#departments ul#navUl li.navLi a {
 	text-decoration: none;
 	color: black;
 	font-size: 1em;
 }
 
-nav#departments ul#navUl li.navLi a:hover {
+div#departments ul#navUl li.navLi a:hover {
 	color: #FF0057;
 }
 
@@ -179,7 +219,7 @@ ul.productsUl li a {
 	width: 100%;
 }
 
-nav#departments ul#navUl li.navLi ul.productsUl {
+div#departments ul#navUl li.navLi ul.productsUl {
 	list-style: none;
 	text-align: left;
 	position: absolute;
@@ -192,25 +232,25 @@ nav#departments ul#navUl li.navLi ul.productsUl {
 	display: none;
 }
 
-nav#departments ul#navUl li.navLi:hover ul.productsUl {
+div#departments ul#navUl li.navLi:hover ul.productsUl {
 	display: block;
 }
 
-nav#departments ul#navUl li.navLi:hover ul.productsUl li a:hover {
+div#departments ul#navUl li.navLi:hover ul.productsUl li a:hover {
 	color: white;
 }
 
-nav#departments ul#navUl li.navLi ul li {
+div#departments ul#navUl li.navLi ul li {
 	padding: 0px 10px;
 	margin-bottom: 10px;
 	width: 100%;
 }
 
-nav#departments ul#navUl li.navLi ul li:last-child {
+div#departments ul#navUl li.navLi ul li:last-child {
 	margin-bottom: 0;
 }
 
-nav#departments ul#navUl li.navLi ul:hover {
+div#departments ul#navUl li.navLi ul:hover {
 	display: flex;
 }
 
@@ -234,6 +274,13 @@ nav#departments ul#navUl li.navLi ul:hover {
 
 nav#departments ul#navUl li.navLi a:hover #cart-item-no {
 	border-color: red;
+}
+
+div#contentDiv{
+	width: 100%;
+	padding: 1%;
+	margin: 100px auto 35px;
+	position: relative;
 }
 
 div#contentDiv section#sec_1 {
@@ -306,7 +353,7 @@ section#sec_1 h1 {
 
 section#sec_1 p {
 	bottom: 5%;
-	left: 30%;
+	left: 10%;
 }
 
 section#sec_1 p a {
@@ -334,15 +381,27 @@ div#contentDiv section#sec_1 div.imgDiv img.furImg {
 
 
 
-div.hr_2px {
+.hr_2px {
 	height: 2px;
 	width: 85%;
 	margin: 13px auto;
 	background-color: red;
 }
 
-div.bg_black_20 {
+.bg_black_20 {
 	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.side_bar_hr{
+	margin: 5px auto 10px;
+}
+
+.hr_w_100{
+	width: 100%;
+}
+
+.hr_w_80{
+	width: 85%;
 }
 
 
@@ -356,7 +415,20 @@ div.bg_black_20 {
 div.mainStockContainer {
 	width: 100%;
 	padding: 1%;
-	margin: 35px 0;
+	margin: 90px auto 35px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+}
+
+div#stockFilters {
+	width: 25%;
+    min-height: 100vh;
+    background-color: #EDEEF2;
+    border-radius: 15px;
+    padding: 15px;
+	color:rgb(72 72 72);
 }
 
 div.stockCardsHolder {
@@ -364,10 +436,11 @@ div.stockCardsHolder {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: center;
 	flex-wrap: wrap;
 	align-content: center;
 	margin: 0 auto;
+    padding: 15px;
 }
 
 .itemHeadding {
@@ -377,9 +450,27 @@ div.stockCardsHolder {
 	padding: 12px;
 	margin: 0 auto 30px;
 	font-size: 1rem;
+	letter-spacing: 5px;
+}
+
+div.stockCardsHolder div.productStockCards {
+	height: 200px;
+	width: 200px;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(199, 199, 199, 1);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(199, 199, 199, 1);
+	box-shadow: 0px 0px 10px 0px #c7c7c7;
+	border-radius: 8px;
+	border: 3px solid transparent;
+	transition: 0.2s ease;
+}
+
+div.stockCardsHolder div.productStockCards:hover {
+	border: 3px solid #c7c7c7;
 }
 
 div.stockCardsHolder a {
+	width: 100%;
+	height: 100%;
 	text-decoration: none;
 	color: black;
 }
@@ -416,11 +507,24 @@ div.stockCardsHolder div.stockCard img.stockImg {
 	height: 100%;
 }
 
+
+
+div.stockListHolder {
+	width: 70%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	align-content: center;
+	margin: 0 auto;
+	background-color: #EDEEF2;
+	border-radius: 15px;
+    padding: 15px;
+}
+
 /* -----------------------------------------------------MOBILES----------------------------------------------------- */
 
-div#mobiles {
-	width: 70%;
-}
 
 div#mobiles div.mobileCard.stockCard {
 	width: 150px;
@@ -587,12 +691,11 @@ div.stocks div.pricing {
 
 #stockDetails {
 	width: 90%;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: flex-start;
-	margin: 0 auto;
-	align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 120px auto 0;
 }
 
 #stockDetails .stockDetailsCol {
@@ -780,12 +883,12 @@ div.stocks div.pricing {
 /* ----------------------------------------------BAG----------------------------------------------*/
 
 #cartContainer {
-	width: 90%;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	flex-direction: row;
-	margin: 20px auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 150px auto 0;
 }
 
 #cartContainer #cartProductDetails {
@@ -962,7 +1065,7 @@ div.cpl2 p {
 
 footer#footer {
 	width: 100%;
-	padding: 100px 30px 50px;
+	padding: 50px 30px 25px;
 	background-color: #C72945;
 	display: flex;
 	flex-direction: row;

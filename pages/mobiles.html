@@ -8,110 +8,288 @@
 	<link rel="stylesheet" href="../style/style.css">
 	<link rel="stylesheet" href="../style/all.min.css">
 	<link rel="stylesheet" href="../style/swiper-bundle.min.css">
+	<style>
+		#filter_by_price {
+			margin-bottom: 20px;
+		}
 
+		#filterHeadding {
+			text-align: center;
+			font-size: 1rem;
+			letter-spacing: 2px;
+			color: rgb(255 0 87);
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+
+		.filterOptionHeadding {
+			position: relative;
+			height: 20px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		#scaleDiv {
+			overflow: hidden;
+			border-radius: 25px;
+			margin: 5px 0;
+			border: 1px solid black;
+		}
+
+		#priceScale {
+			appearance: none;
+			background: #1f1f29;
+			border-radius: 15px;
+			height: 11px;
+			outline: none;
+			border: none;
+			display: block;
+			width: 100%;
+			display: flex;
+		}
+
+		#priceScale::-webkit-slider-thumb {
+			appearance: none;
+			width: 9px;
+			height: 9px;
+			border-radius: 25px;
+			background-color: #10403b;
+			cursor: pointer;
+			border: 2px solid white;
+			box-shadow: -140px 0 0 135px rgb(255 0 87);
+		}
+
+		#scaleDisplayDiv {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		#starting_price,
+		#ending_price {
+			border: 1px solid rgba(0, 0, 0, 0.5);
+			width: 60px;
+			text-align: center;
+			line-height: 100%;
+			padding: 5px 2px;
+			font-family: rubik, serif;
+		}
+
+		.dropDown {
+			cursor: pointer;
+		}
+
+		.dropDown::before {
+			content: "";
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			border-right: 2px solid black;
+			border-bottom: 2px solid black;
+			top: 25%;
+			right: 5px;
+			transform: rotate(225deg);
+			transition: 0.2s ease;
+		}
+
+		.filterOpen.dropDown::before {
+			transform: rotate(45deg);
+		}
+
+		.customCheck {
+			position: absolute;
+			left: 0;
+		}
+
+		.inputLabel {
+			display: flex;
+			position: relative;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			flex-direction: row;
+			align-items: center;
+			width: 100%;
+			padding-left: 35px;
+			margin-bottom: 10px;
+			line-height: 100%;
+			height: 24px;
+		}
+
+		.inputLabel input {
+			width: 0px;
+			height: 0px;
+			border: 7px solid rgb(0 0 0);
+			opacity: 0;
+			position: absolute;
+		}
+
+		.inputLabel span {
+			width: 15px;
+			height: 15px;
+			border: 1px solid black;
+			background-color: white;
+			border-radius: 50%;
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			cursor: pointer;
+		}
+
+		.inputLabel input:checked~span {
+			background-color: #00fc00;
+		}
+
+		.hideDropDownBox {
+			display: none;
+		}
+	</style>
 	<style>
 		nav#departments li.navLi ul li a#mobiles {
 			color: white;
 		}
 	</style>
-
 	<title>ALL ITEMS</title>
 </head>
 
 <body>
 	<div id="mainDiv">
 		<nav id="topNav">
-			<a href="../index.html">letsPURCHASE.com</a>
-			<input type="search" name="search" id="search" placeholder="SEARCH">
+			<div class="topNavDiv" id="top_main_nav">
+				<a href="../index.html">letsPURCHASE.com</a>
+				<input type="search" name="search" id="search" placeholder="SEARCH">
+			</div>
+
+			<div class="topNavDiv" id="departments">
+				<ul id="navUl">
+					<li class="navLi">
+						<a id="homePage" class="nav_a" href="../index.html">
+							<span class="licon">
+								<i class="fa-solid fa-house"></i>
+							</span>
+							HOME
+						</a>
+					</li>
+					<li class="navLi">
+						<a id="productPage" class="nav_a" href="./products.html">PRODUCTS</a>
+					</li>
+					<li class="navLi">
+						<a id="loginPage" class="nav_a" href="./login.html">
+							<span class="licon">
+								<i class="fa-solid fa-arrow-right-to-bracket"></i>
+							</span>
+							LOG IN
+						</a>
+					</li>
+					<li class="navLi">
+						<a id="bagPage" class="nav_a" href="./bag.html">
+							<span class="licon">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</span>
+							SHOPPING BAG
+							<p id="cart-item-no">0</p>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</nav>
+		<div class="mainStockContainer">
+			<!-- STOCK FILTERS -->
+			<div id="stockFilters">
 
-		<nav id="departments">
-			<ul id="navUl">
-				<li class="navLi">
-					<a id="homePage" class="nav_a" href="../index.html">
-						<span class="licon">
-							<i class="fa-solid fa-house"></i>
-						</span>
-						HOME
-					</a>
-				</li>
-				<li class="navLi">
-					<a id="productPage" class="nav_a" href="./products.html">PRODUCTS</a>
-				</li>
-				<li class="navLi">
-					<a id="loginPage" class="nav_a" href="./login.html">
-						<span class="licon">
-							<i class="fa-solid fa-arrow-right-to-bracket"></i>
-						</span>
-						LOG IN
-					</a>
-				</li>
-				<li class="navLi">
-					<a id="bagPage" class="nav_a" href="./bag.html">
-						<span class="licon">
-							<i class="fa-solid fa-cart-shopping"></i>
-						</span>
-						SHOPPING BAG
-						<p id="cart-item-no">0</p>
-					</a>
-				</li>
-			</ul>
-		</nav>
+				<h2 id="filterHeadding">FILTERS</h2>
+				
+				<div class="hr_2px bg_black_20 side_bar_hr hr_w_100"></div>
 
-		<div class="hr_2px"></div>
+				<div id="filter_by_price">
 
+					<p class="filterOptionHeadding">PRICE</p>
 
-		<div id="indvItem">
-
-			<div class="mainStockContainer">
-
-				<h3 class="itemHeadding">MOBILES</h3>
-
-				<div id="mobiles" class="stockCardsHolder">
-
-					<div class="stockCard mobileCard" id="realmeCard">
-						<p class="cardName"> <a href="./mobiles/realme.html">realme</a></p>
+					<div id="scaleDiv">
+						<input type="range" name="priceScale" id="priceScale" min="0" max="40000" value="26000"
+							onmousemove="rangeSlide(this.value)">
 					</div>
 
-					<div class="stockCard mobileCard" id="poco">
-						<p class="cardName"><a href="./mobiles/poco.html">poco</a></p>
-					</div>
+					<div id="scaleDisplayDiv">
+						<span id="starting_price">₹0</span>
+						to
+						<span id="ending_price">₹0</span>
 
-					<div class="stockCard mobileCard" id="nothing">
-						<p class="cardName">nothing phone</p>
-					</div>
-
-					<div class="stockCard mobileCard" id="nazro">
-						<p class="cardName">
-							<span>nazro</span>
-							<span>by realme</span>
-						</p>
-					</div>
-
-					<div class="stockCard mobileCard" id="oppo">
-						<p class="cardName">oppo</p>
-					</div>
-
-					<div class="stockCard mobileCard" id="infinix">
-						<p class="cardName">infinix</p>
-					</div>
-
-					<div class="stockCard mobileCard" id="samsung">
-						<p class="cardName">SAMSUNG</p>
-					</div>
-
-					<div class="stockCard mobileCard" id="iPhone">
-						<p class="cardName"><i class="fa-brands fa-apple"></i> iPhone</p>
 					</div>
 
 				</div>
 
+				<div id="filterByBrand">
+
+					<p class="filterOptionHeadding dropDown" id="filterByBrandHeadding">BRANDS</p>
+					<div class="hr_2px bg_black_20 side_bar_hr hr_w_100"></div>
+
+					<div class="filterBrandNames" id="filterBrandNames">
+
+						<label class="inputLabel">
+							<input type="checkbox" id="realmeFilterCheckbox">
+							<span></span>
+							REALME
+						</label>
+
+						<label class="inputLabel">
+							<input type="checkbox" id="pocoFilterCheckbox">
+							<span></span>
+							POCO
+						</label>
+
+						<label class="inputLabel">
+							<input type="checkbox" id="oppoFilterCheckbox">
+							<span></span>
+							OPPO
+						</label>
+
+						<label class="inputLabel">
+							<input type="checkbox" id="vivoFilterCheckbox">
+							<span></span>
+							VIVO
+						</label>
+
+						<label class="inputLabel">
+							<input type="checkbox" id="samsungFilterCheckbox">
+							<span></span>
+							SAMSUNG
+						</label>
+					</div>
+				</div>
+
 			</div>
-
+			<div id="mobiles" class="stockListHolder indvStock"> </div>
 		</div>
-
 		<footer id="footer"></footer>
 	</div>
+
+	<script>
+
+		let filterByBrandHeadding = document.getElementById("filterByBrandHeadding")
+		let filterBrandNames = document.getElementById("filterBrandNames")
+
+		function rangeSlide(value) {
+			document.querySelector("#ending_price").innerText = `₹${value}`
+		}
+
+		function manageDropDownBox(dropDownBtn, dropDownBox) {
+			dropDownBtn.addEventListener("click", (e) => {
+				e.stopPropagation();
+				dropDownBox.classList.toggle("hideDropDownBox")
+				dropDownBtn.classList.toggle("filterOpen")
+			})
+		}
+
+		manageDropDownBox(filterByBrandHeadding, filterBrandNames)
+
+	</script>
+
+	<script type="module" src="../scripts/mobiles.js"></script>
 	<script src="../scripts/bag/item_nos.js"></script>
 	<script src="../scripts/footer.js"></script>
 </body>

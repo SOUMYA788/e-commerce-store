@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style/style.css">
+	<link rel="stylesheet" href="../style/all.min.css">
+	<title>Desktops</title>
+</head>
+
+<body>
+	<div id="mainDiv">
+
+		<nav id="topNav">
+			<div class="topNavDiv" id="top_main_nav">
+				<a href="../index.html">letsPURCHASE.com</a>
+				<input type="search" name="search" id="search" placeholder="SEARCH">
+			</div>
+
+			<div class="topNavDiv" id="departments">
+
+				<ul id="navUl">
+					<li class="navLi">
+						<a id="homePage" class="nav_a" href="../index.html">
+							<span class="licon">
+								<i class="fa-solid fa-house"></i>
+							</span>
+							HOME
+						</a>
+					</li>
+					<li class="navLi">
+						<a id="productPage" class="nav_a" href="./products.html">PRODUCTS</a>
+					</li>
+					<li class="navLi">
+						<a id="loginPage" class="nav_a" href="./login.html">
+							<span class="licon">
+								<i class="fa-solid fa-arrow-right-to-bracket"></i>
+							</span>
+							LOG IN
+						</a>
+					</li>
+					<li class="navLi">
+						<a id="bagPage" class="nav_a" href="./bag.html">
+							<span class="licon">
+								<i class="fa-solid fa-cart-shopping"></i>
+							</span>
+							SHOPPING BAG
+							<p id="cart-item-no">0</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="mainStockContainer">
+			<div id="desktops" class="stockCardsHolder indvStock">
+			</div>			
+		</div>
+
+		<footer id="footer"></footer>
+
+	</div>
+
+	<script src="../scripts/footer.js"></script>
+	<script src="../scripts/desktop.js"></script>
+</body>
+
+</html>
