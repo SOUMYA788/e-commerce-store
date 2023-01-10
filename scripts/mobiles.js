@@ -78,6 +78,7 @@ const sid = (target, data) => {
 const realmeMobiles = [
 	{
 		id: "0",
+		brand: "realmeMobile",
 		className: "realmeMobile",
 		img: "img/mobiles/realme/01/01.webp",
 		gallery: {
@@ -107,6 +108,7 @@ const realmeMobiles = [
 
 	{
 		id: "1",
+		brand: "realmeMobile",
 		className: "realmeMobile",
 		img: "img/mobiles/realme/02/01.webp",
 		gallery: {
@@ -136,6 +138,7 @@ const realmeMobiles = [
 
 	{
 		id: "2",
+		brand: "realmeMobile",
 		className: "realmeMobile",
 		img: "img/mobiles/realme/03/01.webp",
 		gallery: {
@@ -165,6 +168,7 @@ const realmeMobiles = [
 
 	{
 		id: "3",
+		brand: "realmeMobile",
 		className: "realmeMobile",
 		img: "img/mobiles/realme/04/01.webp",
 		gallery: {
@@ -194,6 +198,7 @@ const realmeMobiles = [
 
 	{
 		id: "4",
+		brand: "realmeMobile",
 		className: "realmeMobile",
 		img: "img/mobiles/realme/05/01.webp",
 		gallery: {
@@ -221,9 +226,11 @@ const realmeMobiles = [
 	}
 ]
 
+
 const pocoMobiles = [
 	{
 		id: "0",
+		brand: "pocoMobiles",
 		className: "pocoMobile",
 		img: "img/mobiles/poco/01/01.webp",
 		gallery: {
@@ -253,6 +260,7 @@ const pocoMobiles = [
 
 	{
 		id: "1",
+		brand: "pocoMobiles",
 		className: "pocoMobile",
 		img: "img/mobiles/poco/02/01.webp",
 		name: "POCO M3 Pro 5G (Yellow)",
@@ -282,6 +290,7 @@ const pocoMobiles = [
 
 	{
 		id: "2",
+		brand: "pocoMobiles",
 		className: "pocoMobile",
 		img: "img/mobiles/poco/03/01.webp",
 		gallery: {
@@ -309,8 +318,8 @@ const pocoMobiles = [
 		}
 	}
 ]
-
-let allMobiles = [].concat(realmeMobiles, pocoMobiles);
+// .concat(realmeMobiles, pocoMobiles)
+let allMobiles = [...realmeMobiles, ...pocoMobiles];
 
 allMobiles.forEach(element => {
 	element.className = "mobileDivRow";
@@ -344,13 +353,34 @@ priceScale.addEventListener("change", () => {
 })
 
 // FILTER BY NAME
-
 const realmeFilterCheckbox = document.querySelector("#realmeFilterCheckbox");
 const pocoFilterCheckbox = document.querySelector("#pocoFilterCheckbox");
 const oppoFilterCheckbox = document.querySelector("#oppoFilterCheckbox");
 const vivoFilterCheckbox = document.querySelector("#vivoFilterCheckbox");
 const samsungFilterCheckbox = document.querySelector("#samsungFilterCheckbox");
 
+let filterByName = () => {
+	let nameFilterStock = [];
+	let setStock = (checkBoxName, stockName) => { 
+		if (checkBoxName.checked) {
+			nameFilterStock = nameFilterStock.concat(stockName)
+		}
+	}
+	setStock(realmeFilterCheckbox, realmeMobiles)
+	setStock(pocoFilterCheckbox, pocoMobiles)
+	nameFilterStock.forEach(element => {
+		element.className = "mobileDivRow";
+	});
+	sid(mobiles, nameFilterStock)
+}
+
+realmeFilterCheckbox.addEventListener("change", () => {
+	filterByName();
+})
+
+pocoFilterCheckbox.addEventListener("change", () => {
+	filterByName();
+})
 
 
 
