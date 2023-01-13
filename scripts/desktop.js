@@ -1,347 +1,406 @@
 // clickStocks(${e.className}, ${e.id})
+console.log("attached desktop");
 const sid = (target, data) => {
-	if (target != null && data != null) {
+	if (target != null && data != null && data.length > 0) {
 		try {
-			let targetInnerHTML = ""
-			data.forEach((element, index) => {
+			let compileHTML = ""
+			data.forEach((dataElement) => {
+				let img = dataElement.img;
+				let name = dataElement.name;
+				let className = dataElement.className;
+				let price = `₹${dataElement.price}`;
 
-				if (index < (data.length - 1)) {
-					targetInnerHTML += `
-						<div class="hr_2px bg_black_20" style="width: 100%;"></div>
+				let otherDetails = "";
 
-						<div class="stocks ${element.className}">
+				let basic_details = Object.entries(dataElement.basic_details);
+				basic_details.forEach((basic_details_element) => {
+					let basic_elements = basic_details_element[1]
+					otherDetails += `<li>${basic_elements}</li>`
+				});
 
-							<div class="productImg">
-								<img src="../${element.img}" alt="${element.name}" />
-							</div>
-
-							<div class="productInfo">
-								<h2>${element.name}</h2>
-								<ul class="productDetails">
-									<li>${element.storage}</li>
-									<li>${element.display}</li>
-									<li>${element.cammera}</li>
-									<li>${element.battery}</li>
-									<li>${element.processor}</li>
-									<li>${element.warrenty}</li>
-								</ul>
-							</div>
-
-							<div class="pricing">
-								<p class="current_price">${element.price}</p>
-							</div>
-
+				compileHTML += `
+					<div class="hr_2px bg_black_20" style="width: 100%;"></div>
+					<div class="stocks ${className}">
+						<div class="productImg">
+							<img src="../${img}" alt="${name}" />
 						</div>
-					`
-				} else {
-					targetInnerHTML += `
-						<div class="hr_2px bg_black_20" style="width: 100%;"></div>
-
-						<div class="stocks ${element.className}">
-
-							<div class="productImg">
-								<img src="../${element.img}" alt="${element.name}" />
-							</div>
-
-							<div class="productInfo">
-								<h2>${element.name}</h2>
-								<ul class="productDetails">
-									<li>${element.storage}</li>
-									<li>${element.display}</li>
-									<li>${element.cammera}</li>
-									<li>${element.battery}</li>
-									<li>${element.processor}</li>
-									<li>${element.warrenty}</li>
-								</ul>
-							</div>
-
-							<div class="pricing">
-								<p class="current_price">${element.price}</p>
-							</div>
-
+						<div class="productInfo computer_product_info">
+							<h2>${name}</h2>
+							<ul class="productDetails">
+								${otherDetails}
+							</ul>
 						</div>
-
-						<div class="hr_2px bg_black_20" style="width: 100%;"></div>
-					`
-				}
-			})
-			target.innerHTML = targetInnerHTML;
+						<div class="pricing">
+							<p class="current_price">${price}</p>
+						</div>
+					</div>
+				`
+				target.innerHTML = compileHTML
+			});
 		} catch (error) {
 			console.log(error);
 			console.log("AN ERROR OCCURED");
 		}
-
 	}
 }
 
 
-const realmeMobiles = [
+const lenovoComputers = [
 	{
 		id: "0",
-		className: "realmeMobile",
-		img: "img/mobiles/realme/01/01.webp",
-		gallery: {
-			img1: "img/mobiles/realme/01/02.webp",
-			img2: "img/mobiles/realme/01/03.webp",
-			img3: "img/mobiles/realme/01/04.webp"
+		brand: "lenovoComputers",
+		className: "lenovoComputers",
+		"img": "img/desktop/lenovo/01/01.webp",
+		"name": "Lenovo Ideacentre 320 Celeron",
+		"basic_details": {
+			"storage_info": "1 x 4GB DDR4 RAM | 1TB Hard Drive",
+			"display_info": "19.5 inch HD+ LED Backlit Display | 1440 x 900 Pixel",
+			"processor_info": "Intel Core i3 (10th Gen) | 2.1 GHz with Turbo Frequency Upto 4.1 GHz"
 		},
-		name: "realme C31 (Light Silver)",
-		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
-		display: "16.56 cm (6.52 inch) HD Display",
-		cammera: "13MP + 2MP + 0.3MP | 5MP Front Camera",
-		battery: "5000 mAh Battery",
-		processor: "Unisoc T612 Processor",
-		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹8,299",
-		calc_price: 8299,
-		other_details: {
-			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
-			Color: "light Silver",
-			"Model Name": "C31",
-			"Model Number": "RMX3501",
-			"Sim Type": "Dual Sim",
-			"OTG Compatable": "Yes",
-			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
-		}
+		warrenty: "1 Year Lenovo Warranty and Free Transit Insurance.",
+		"gallery": {
+			img1: "img/desktop/lenovo/01/02.webp",
+			img2: "img/desktop/lenovo/01/03.webp",
+			img3: "img/desktop/lenovo/01/04.webp"
+		},
+		"others": {
+			"general": {
+				"MODEL NAME": "AIO 330 20IGM",
+				"SERIES": "Ideacentre 320",
+				"PART NUMBER": "F0D7001AIN",
+				"COLOR": "Black",
+				"BRAND": "Lenovo"
+			},
+
+			"memory": {
+				"MEMORY SLOT": "1",
+				"SYSTEM MEMORY": "4 GB DDR4",
+				"HARD DRIVE": "1TB",
+				"MEMORY DETAILS": "1 x 4GB",
+			},
+
+			"display": {
+				"TOUCH SUPPORT": "No",
+				"DISPLAY SIZE": "19.5 inch",
+				"HD SUPPORT": "Yes",
+				"3D SUPPORT": "No",
+				"DISPLAY RESOLUTION": "1440 x 900 Pixel",
+				"DISPLAY TYPE": "HD+ LED Backlit Display"
+			},
+
+			"graphics": {
+				"DEDICATED GRAPHICS MEMORY": "No",
+				"INTEGRATED GRAPHICS PROCESSOR": "Intel UHD Graphics 600"
+			},
+
+			"cammera": {
+				"BUILT-IN-WEBCAM": "Yes"
+			},
+
+			"connectivity": {
+				"USB": "2 x USB 2.0, 1 x USB 3.0",
+				"BLUETOOTH": "V4.0",
+				"HEADPHONE JACK": "Yes",
+				"HDMI": "Yes",
+				"CARD READER": "3-in-1 Card Reader",
+				"OTHER PORTS": "DC Power In"
+			}
+		},
+		price: "23,990",
+		calc_price: 23990,
+	},
+
+	{
+		"id": "1",
+		"brand": "lenovoComputers",
+		"className": "lenovoComputers",
+		"img": "img/desktop/lenovo/02/01.webp",
+		"name": "Lenovo ideacentre Core i3 (10th Gen)",
+		"basic_details": {
+			"storage_info": "1 x 8GB DDR4 | 512GB SSD",
+			"display_info": "19.5 inch HD+ LED Backlit Display | 1440 x 900 Pixel",
+			"processor_info": "Intel Core i3 (10th Gen) | 2.1 GHz with Turbo Frequency Upto 4.1 GHz",
+		},
+		"GALLERY": {
+			img1: "img/desktop/lenovo/02/02.webp",
+			img2: "img/desktop/lenovo/02/03.webp",
+			img3: "img/desktop/lenovo/02/04.webp"
+		},
+		"others": {
+			"general": {
+				"MODEL NAME": "A340-24IWL",
+				"SERIES": "Ideacentre",
+				"PART NUMBER": "F0E800U0IN | F0E800UFIN | F0E800W3IN | F0E800Y3IN",
+				"COLOR": "Black",
+				"BRAND": "Lenovo"
+			},
+			"system feature": {
+				"PROCESSOR NAME": "Core i3 (10th Gen)",
+				"CHIPSET": "Intel SoC Platform",
+				"PROCESSOR BRAND": "Intel",
+				"PROCESSOR FREQUENCY": "2.1 GHz with Turbo Frequency Upto 4.1 GHz",
+				"OPERATING SYSTEM": "Windows 10 Home",
+				"PROCESSOR MODEL": "10110U"
+			},
+			"memory": {
+				"SYSTEM MEMORY": "8GB DDR4",
+				"SSD CAPACITY": "512GB"
+			},
+			"display": {
+				"TOUCH SUPPORT": "No",
+				"DISPLAY SIZE": "23.8 inch",
+				"HD SUPPORT": "Yes",
+				"DISPLAY RESOLUTION": "1920 x 1080 Pixels",
+				"DISPLAY TYPE": "Full HD Display (250nits Brightness, IPS Level Panel, 90% Screen to Body Ratio)"
+			},
+
+			"graphics": {
+				"DEDICATED GRAPHICS MEMORY": "No",
+				"INTEGRATED GRAPHICS PROCESSOR": "Intel UHD Graphics"
+			},
+
+			"audio": {
+				"BUILT-IN MICROPHONE": "Built-in Mono Microphone",
+				"OTHER AUDIO FEATURE": "BUILT-IN SPEAKER",
+				"SPEAKER OUTPUT": "3W x 2 W"
+			},
+
+			"cammera": {
+				"BUILT-IN-WEBCAM": "Yes"
+			},
+
+			"connectivity": {
+				"USB": "Rear Ports: 2 x USB 2.0, 1 x USB 3.1 Gen 2 (USB 3.1 Gen 1 for Celeron and Pentium Models), Left Ports:1 x USB 3.1 Gen 2 (USB 3.1 Gen 1 for Celeron and Pentium Models)",
+				"BLUETOOTH": "V4.0",
+				"HEADPHONE JACK": "Yes",
+				"HDMI": "1 x HDMI 1.4 Out	",
+				"CARD READER": "3-in-1 Card Reader",
+				"OTHER PORTS": "1 x Power Connector, 1 x Ethernet (RJ-45), 1 x Headphone / Microphone Combo Jack (3.5mm)",
+				"POWER CONSUPTION": "65 W"
+			},
+
+		},
+		"warrenty": "1 Year Onsite Warranty",
+		price: "56,490",
+		calc_price: 56490,
+	},
+]
+
+const asusComputers = [
+	{
+		id: "0",
+		brand: "asusComputers",
+		className: "asusComputers",
+		"name": "ASUS Ryzen 3 Dual Core (4 GB DDR4/1 TB)",
+		"img": "img/desktop/asus/01/01.webp",
+		"basic_details": {
+			"storage_info": "4 GB DDR4 RAM | 1TB Hard Drive",
+			"display_info": "23.8 Inch Full HD LED | 1920 x 1080 Pixels",
+			"processor_info": "AMD Ryzen 3 Dual Core | 2.6 GHz with Turbo Boost Upto 3.5 GHz",
+		},
+		gallery: {
+			img1: "img/desktop/asus/01/02.webp",
+			img2: "img/desktop/asus/01/03.webp",
+			img3: "img/desktop/asus/01/04.webp"
+		},
+		"others": {
+			"GENERAL": {
+				"MODEL NAME": "M241DAK-WA150T",
+				"SERIES": "NA",
+				"PART NUMBER": "90PT02P1-M06670",
+				"COLOR": "WHITE",
+				"BRAND": "ASUS"
+			},
+			"SYSTEM FEATURE": {
+				"PROCESSOR NAME": "Ryzen 3 Dual Core",
+				"PROCESSOR BRAND": "AMD",
+				"PROCESSOR FREQUENCY": "2.6 GHz with Turbo Boost Upto 3.5 GHz",
+				"OPERATING SYSTEM": "Windows 10 Home",
+				"PROCESSOR MODEL": "3250U"
+			},
+			"STORAGE": {
+				"SYSTEM MEMORY": "4 GB DDR4",
+				"STORAGE INTERFACE": "SATA",
+				"READING SPEED": "5400 RPM",
+				"HARD DRIVE": "1TB"
+			},
+			"DISPLAY": {
+				"TOUCH SUPPORT": "No",
+				"DISPLAY SIZE": "23.8 Inch",
+				"HD": "Yes",
+				"DISPLAY RESOLUTION": "1920 x 1080 Pixels",
+				"DISPLAY TYPE": "Full HD LED Backlit Anti-glare IPS Display (250 nits Brightness, 100% sRGB, 88% Screen-to-body Ratio)"
+			},
+			"GRAPHICS": {
+				"DEDICATED GRAPHICS MEMORY": "No",
+				"INTEGRATED GRAPHICS PROCESSOR": "AMD Radeon Graphics"
+			},
+			"AUDIO": {
+				"BUILT-IN MICROPHONE": "Yes",
+				"OTHER AUDIO FEATURE": "Built-in Speakers, Sonic Master",
+			},
+			"CAMMERA": {
+				"BUILT-IN-WEBCAM": "Yes"
+			},
+			"POWER": {
+				"POWER-INPUT": "100 - 240 V AC",
+				"POWER CONSUPTION": "90 W"
+			},
+			"connectivity": {
+				"USB": "1 x USB 2.0 Type A, 4 x USB 3.2 (1st Gen 1) Type A",
+				"BLUETOOTH": "V5.0",
+				"HEADPHONE JACK": "Yes",
+				"HDMI": "1 x HDMI In (v1.4), 1 x HDMI Out (v1.4)",
+				"OTHER PORTS": "1 x 3.5 mm Combo Audio Jack",
+			},
+		},
+
+		"warrenty": "1 Year Warranty for Handset, 6 Months for Accessories",
+		"IN THE BOX": "AIO Desktop, Wireless Keyboard, Wireless Mouse, Power Adaptor, User Manuals, Warranty Documents",
+		price: "16,499",
+		calc_price: 16499,
 	},
 
 	{
 		id: "1",
-		className: "realmeMobile",
-		img: "img/mobiles/realme/02/01.webp",
-		gallery: {
-			img1: "img/mobiles/realme/02/02.webp",
-			img2: "img/mobiles/realme/02/03.webp",
-			img3: "img/mobiles/realme/02/04.webp"
+		brand: "asusComputers",
+		className: "asusComputers",
+		"img": "img/desktop/asus/02/01.webp",
+		"name": "ASUS Vivo AiO V222 Core i3",
+		"basic_details": {
+			"storage_info": "8GB DDR4 RAM | 1TB Hard Drive | 256GB SSD",
+			"display_info": "21.5 Inch Full HD | 1920 x 1080 Pixels | No Touch Support",
+			"processor_info": "Intel Core i3 | 2.1 GHz upto max turbo frequency 4.1 GHz",
 		},
-		name: "realme C31 (Dark Green)",
-		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
-		display: "16.56 cm (6.52 inch) HD Display",
-		cammera: "13MP + 2MP + 0.3MP | 5MP Front Camera",
-		battery: "5000 mAh Battery",
-		processor: "Unisoc T612 Processor",
-		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹8,299",
-		calc_price: 8299,
-		other_details: {
-			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
-			Color: "light Silver",
-			"Model Name": "C31",
-			"Model Number": "RMX3501",
-			"Sim Type": "Dual Sim",
-			"OTG Compatable": "Yes",
-			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
-		}
-	},
+		gallery: {
+			img1: "img/desktop/asus/02/02.webp",
+			img2: "img/desktop/asus/02/03.webp",
+			img3: "img/desktop/asus/02/04.webp"
+		},
+		"others": {
+			"GENERAL": {
+				"MODEL NAME": "V222FAK-BA022WS",
+				"SERIES": "Vivo AiO V222",
+				"PART NUMBER": "90PT02G1-M00EB0",
+				"COLOR": "Black",
+				"BRAND": "ASUS"
+			},
+			"SYSTEM FEATURE": {
+				"PROCESSOR NAME": "Core i3",
+				"PROCESSOR BRAND": "Intel",
+				"PROCESSOR FREQUENCY": "2.1 GHz upto max turbo frequency 4.1 GHz",
+				"OPERATING SYSTEM": "Windows 11 Home",
+				"PROCESSOR MODEL": "Intel Core i3 10110U"
+			},
+			"STORAGE": {
+				"SYSTEM MEMORY": "8GB DDR4",
+				"STORAGE INTERFACE": "SATA",
+				"READING SPEED": "5400 RPM",
+				"HARD DRIVE": "1TB",
+				"SSD": "256GB"
+			},
+			"DISPLAY": {
+				"TOUCH SUPPORT": "No",
+				"DISPLAY SIZE": "21.5 Inch",
+				"HD": "Yes",
+				"DISPLAY RESOLUTION": "1920 x 1080 Pixels",
+				"DISPLAY TYPE": "Full HD"
+			},
+			"GRAPHICS": {
+				"DEDICATED GRAPHICS MEMORY": "No",
+				"INTEGRATED GRAPHICS PROCESSOR": "AMD Radeon Graphics"
+			},
+			"connectivity": {
+				"USB": "1 x USB 2.0 Type-A, 4 x USB 3.2 Gen 1 Type-A",
+				"BLUETOOTH": "V5.0",
+				"HDMI": "1 x HDMI 1.4",
+				"OTHER PORTS": "1 x 3.5 mm Combo Audio Jack",
+			},
+		},
 
-	{
-		id: "2",
-		className: "realmeMobile",
-		img: "img/mobiles/realme/03/01.webp",
-		gallery: {
-			img1: "img/mobiles/realme/03/02.webp",
-			img2: "img/mobiles/realme/03/03.webp",
-			img3: "img/mobiles/realme/03/04.webp"
-		},
-		name: "realme C30 (Bamboo Green)",
-		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
-		display: "16.51 cm (6.5 inch) HD+ Display",
-		cammera: "8MP Rear Camera | 5MP Front Camera",
-		battery: "5000 mAh Lithium Ion Battery",
-		processor: "Unisoc T612 Processor",
-		warrenty: "1 Year Manufacturer Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹7,999",
-		calc_price: 7999,
-		other_details: {
-			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
-			Color: "light Silver",
-			"Model Name": "C31",
-			"Model Number": "RMX3501",
-			"Sim Type": "Dual Sim",
-			"OTG Compatable": "Yes",
-			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
-		}
-	},
-
-	{
-		id: "3",
-		className: "realmeMobile",
-		img: "img/mobiles/realme/04/01.webp",
-		gallery: {
-			img1: "img/mobiles/realme/04/02.webp",
-			img2: "img/mobiles/realme/04/03.webp",
-			img3: "img/mobiles/realme/04/04.webp"
-		},
-		name: "realme 9 (Sunburst Gold)",
-		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 256 GB",
-		display: "16.26 cm (6.4 inch) Full HD+ AMOLED Display",
-		cammera: "108MP + 8MP + 2MP | 16MP Front Camera",
-		battery: "5000 mAh Lithium Ion Battery",
-		processor: "Qualcomm Snapdragon 680 Processor",
-		warrenty: "1 Year Manufacturer Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹14,499",
-		calc_price: 14499,
-		other_details: {
-			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
-			Color: "light Silver",
-			"Model Name": "C31",
-			"Model Number": "RMX3501",
-			"Sim Type": "Dual Sim",
-			"OTG Compatable": "Yes",
-			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
-		}
-	},
-
-	{
-		id: "4",
-		className: "realmeMobile",
-		img: "img/mobiles/realme/05/01.webp",
-		gallery: {
-			img1: "img/mobiles/realme/05/02.webp",
-			img2: "img/mobiles/realme/05/03.webp",
-			img3: "img/mobiles/realme/05/04.webp"
-		},
-		name: "realme 9 Pro+ 5G (Aurora Green)",
-		storage: "8 GB RAM | 256 GB ROM",
-		display: "16.26 cm (6.4 inch) Full HD+ AMOLED Display",
-		cammera: "50MP + 8MP + 2MP | 16MP Front Camera",
-		battery: "4500 mAh Li-ion Battery",
-		processor: "Mediatek Dimensity 920 Processor",
-		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
-		price: "₹26,999",
-		other_details: {
-			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
-			Color: "light Silver",
-			"Model Name": "C31",
-			"Model Number": "RMX3501",
-			"Sim Type": "Dual Sim",
-			"OTG Compatable": "Yes",
-			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
-		}
+		"IN THE BOX": "All-in-One Desktop, Wireless Keyboard, Wireless Mouse, Power Adapter, User Manual",
+		"warrenty": "1 Year Warranty for Handset, 6 Months for Accessories",
+		price: "16,499",
+		calc_price: 16499,
 	}
 ]
 
-const pocoMobiles = [
-	{
-		id: "0",
-		className: "pocoMobile",
-		img: "img/mobiles/poco/01/01.webp",
-		gallery: {
-			img1: "img/mobiles/poco/01/02.webp",
-			img2: "img/mobiles/poco/01/03.webp",
-			img3: "img/mobiles/poco/01/04.webp"
-		},
-		name: "POCO M3 Pro 5G (Black)",
-		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
-		display: "16.51 cm (6.5 inch) Full HD+ Display",
-		cammera: "48MP + 2MP + 2MP | 8MP Front Camera",
-		battery: "5000 mAh Lithium-ion Polymer Battery",
-		processor: "MediaTek Dimensity 700 Processor",
-		warrenty: "1 Year Warranty for Handset, 6 Months for Accessories",
-		price: "₹16,499",
-		calc_price: 16499,
-		other_details: {
-			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
-			Color: "light Silver",
-			"Model Name": "C31",
-			"Model Number": "RMX3501",
-			"Sim Type": "Dual Sim",
-			"OTG Compatable": "Yes",
-			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
-		}
-	},
+let allComputers = [...lenovoComputers, ...asusComputers];
 
-	{
-		id: "1",
-		className: "pocoMobile",
-		img: "img/mobiles/poco/02/01.webp",
-		name: "POCO M3 Pro 5G (Yellow)",
-		gallery: {
-			img1: "img/mobiles/poco/02/02.webp",
-			img2: "img/mobiles/poco/02/03.webp",
-			img3: "img/mobiles/poco/02/04.webp"
-		},
-		storage: "4 GB RAM | 64 GB ROM | Expandable Upto 1 TB",
-		display: "16.51 cm (6.5 inch) Full HD+ Display",
-		cammera: "48MP + 2MP + 2MP | 8MP Front Camera",
-		battery: "5000 mAh Lithium-ion Polymer Battery",
-		processor: "MediaTek Dimensity 700 Processor",
-		warrenty: "1 Year Warranty for Handset, 6 Months for Accessories",
-		price: "₹14,499",
-		calc_price: 14499,
-		other_details: {
-			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
-			Color: "Yellow",
-			"Model Name": "C31",
-			"Model Number": "RMX3501",
-			"Sim Type": "Dual Sim",
-			"OTG Compatable": "Yes",
-			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
-		}
-	},
-
-	{
-		id: "2",
-		className: "pocoMobile",
-		img: "img/mobiles/poco/03/01.webp",
-		gallery: {
-			img1: "img/mobiles/poco/03/02.webp",
-			img2: "img/mobiles/poco/03/03.webp",
-			img3: "img/mobiles/poco/03/04.webp"
-		},
-		name: "POCO M3 Pro 5G (Cool Blue)",
-		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
-		display: "16.51 cm (6.5 inch) Full HD+ Display",
-		cammera: "48MP + 2MP + 2MP | 8MP Front Camera",
-		battery: "5000 mAh Lithium-ion Polymer Battery",
-		processor: "MediaTek Dimensity 700 Processor",
-		warrenty: "1 Year Warranty for Handset, 6 Months for Accessories",
-		price: "₹16,499",
-		calc_price: 16499,
-		other_details: {
-			"In The Box": "Handset, Adapter, USB Cable, Sim Card Tool, Screen Protect Film, Case, Important Info Booklet with Warranty Card, Quick Guide",
-			Color: "Yellow",
-			"Model Name": "C31",
-			"Model Number": "RMX3501",
-			"Sim Type": "Dual Sim",
-			"OTG Compatable": "Yes",
-			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
-		}
-	}
-]
-
-
-
-let allMobiles = [].concat(realmeMobiles, pocoMobiles);
-
-allMobiles.forEach(element => {
-	element.className = "mobileDivRow";
-	// console.log(element);
+allComputers.forEach(element => {
+	element.className = "computerDivRow";
 });
 
-const realmeHolder = document.getElementById("realmeDiv")
+const mobiles = document.getElementById("computers")
 
-const pocoHolder = document.getElementById("pocoDiv")
+sid(mobiles, allComputers)
 
-const mobiles = document.getElementById("desktops")
 
-// sid(realmeHolder, realmeMobiles)
-// sid(pocoHolder, pocoMobiles)
+// FILTER PROCESS...
 
-sid(mobiles, allMobiles)
+let priceScale = document.querySelector("#priceScale")
+let priceScaleValue = parseInt(priceScale.value);
 
+// FILTER BY PRICE
+priceScale.addEventListener("change", () => {
+
+	document.querySelector("#ending_price").innerText = `₹${priceScale.value}`
+
+	priceScaleValue = parseInt(priceScale.value);
+
+	let priceFilteredStock = allComputers.filter((value, index) => {
+		let mobilePriceStr = value.price;
+		let mobilePrice = parseInt(`${mobilePriceStr.split(",")[0]}${mobilePriceStr.split(",")[1]}`);
+		if (mobilePrice <= priceScaleValue) {
+			return value
+		}
+	});
+	sid(mobiles, priceFilteredStock)
+})
+
+// FILTER BY NAME
+const realmeFilterCheckbox = document.querySelector("#realmeFilterCheckbox");
+const pocoFilterCheckbox = document.querySelector("#pocoFilterCheckbox");
+const oppoFilterCheckbox = document.querySelector("#oppoFilterCheckbox");
+const vivoFilterCheckbox = document.querySelector("#vivoFilterCheckbox");
+const samsungFilterCheckbox = document.querySelector("#samsungFilterCheckbox");
+
+let filterByName = () => {
+	let nameFilterStock = [];
+	let setStock = (checkBoxName, stockName) => {
+		if (checkBoxName.checked) {
+			nameFilterStock = nameFilterStock.concat(stockName)
+		}
+	}
+	setStock(realmeFilterCheckbox, lenovoComputers)
+	setStock(pocoFilterCheckbox, asusComputers)
+	nameFilterStock.forEach(element => {
+		element.className = "computerDivRow";
+	});
+	sid(mobiles, nameFilterStock)
+	setSelectedItem(nameFilterStock)
+}
+
+realmeFilterCheckbox.addEventListener("change", () => {
+	filterByName();
+})
+
+pocoFilterCheckbox.addEventListener("change", () => {
+	filterByName();
+})
+
+
+
+// click any item for further process as user...
 let setSelectedItem = (itemDataArr) => {
 	let stocks = document.querySelectorAll(".stocks")
 
 	stocks.forEach((element, elementIndex) => {
 		element.addEventListener("click", () => {
-			console.log(element);
-			console.log(elementIndex);
-			console.log(itemDataArr[elementIndex])
 			localStorage.setItem("singleProductDetails", JSON.stringify(itemDataArr[elementIndex]))
 			window.location = "./product_details.html"
 		})
 	});
 }
 
-setSelectedItem(allMobiles)
+setSelectedItem(allComputers)

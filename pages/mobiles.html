@@ -8,156 +8,19 @@
 	<link rel="stylesheet" href="../style/style.css">
 	<link rel="stylesheet" href="../style/all.min.css">
 	<link rel="stylesheet" href="../style/swiper-bundle.min.css">
-	<style>
-		#filter_by_price {
-			margin-bottom: 20px;
-		}
 
-		#filterHeadding {
-			text-align: center;
-			font-size: 1rem;
-			letter-spacing: 2px;
-			color: rgb(255 0 87);
-			text-transform: uppercase;
-			margin-bottom: 10px;
-		}
-
-		.filterOptionHeadding {
-			position: relative;
-			height: 20px;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-		}
-
-		#scaleDiv {
-			overflow: hidden;
-			border-radius: 25px;
-			margin: 5px 0;
-			border: 1px solid black;
-		}
-
-		#priceScale {
-			appearance: none;
-			background: #1f1f29;
-			border-radius: 15px;
-			height: 11px;
-			outline: none;
-			border: none;
-			display: block;
-			width: 100%;
-			display: flex;
-		}
-
-		#priceScale::-webkit-slider-thumb {
-			appearance: none;
-			width: 9px;
-			height: 9px;
-			border-radius: 25px;
-			background-color: #10403b;
-			cursor: pointer;
-			border: 2px solid white;
-			box-shadow: -140px 0 0 135px rgb(255 0 87);
-		}
-
-		#scaleDisplayDiv {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-between;
-		}
-
-		#starting_price,
-		#ending_price {
-			border: 1px solid rgba(0, 0, 0, 0.5);
-			width: 60px;
-			text-align: center;
-			line-height: 100%;
-			padding: 5px 2px;
-			font-family: rubik, serif;
-		}
-
-		.dropDown {
-			cursor: pointer;
-		}
-
-		.dropDown::before {
-			content: "";
-			position: absolute;
-			width: 6px;
-			height: 6px;
-			border-right: 2px solid black;
-			border-bottom: 2px solid black;
-			top: 25%;
-			right: 5px;
-			transform: rotate(225deg);
-			transition: 0.2s ease;
-		}
-
-		.filterOpen.dropDown::before {
-			transform: rotate(45deg);
-		}
-
-		.customCheck {
-			position: absolute;
-			left: 0;
-		}
-
-		.inputLabel {
-			display: flex;
-			position: relative;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			-ms-user-select: none;
-			user-select: none;
-			flex-direction: row;
-			align-items: center;
-			width: 100%;
-			padding-left: 35px;
-			margin-bottom: 10px;
-			line-height: 100%;
-			height: 24px;
-		}
-
-		.inputLabel input {
-			width: 0px;
-			height: 0px;
-			border: 7px solid rgb(0 0 0);
-			opacity: 0;
-			position: absolute;
-		}
-
-		.inputLabel span {
-			width: 15px;
-			height: 15px;
-			border: 1px solid black;
-			background-color: white;
-			border-radius: 50%;
-			display: inline-block;
-			position: absolute;
-			left: 0;
-			cursor: pointer;
-		}
-
-		.inputLabel input:checked~span {
-			background-color: #00fc00;
-		}
-
-		.hideDropDownBox {
-			display: none;
-		}
-	</style>
 	<style>
 		nav#departments li.navLi ul li a#mobiles {
 			color: white;
 		}
 	</style>
-	<title>ALL ITEMS</title>
+
+	<title>MOBILES</title>
+
 </head>
 
 <body>
-	<div id="mainDiv">
+	<div id="mainDiv" class="bg-black-100">
 		<nav id="topNav">
 			<div class="topNavDiv" id="top_main_nav">
 				<a href="../index.html">letsPURCHASE.com</a>
@@ -263,7 +126,9 @@
 				</div>
 
 			</div>
-			<div id="mobiles" class="stockListHolder indvStock"> </div>
+			<div id="mobiles" class="stockListHolder">
+			
+			</div>
 		</div>
 		<footer id="footer"></footer>
 	</div>

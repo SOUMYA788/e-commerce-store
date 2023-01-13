@@ -380,31 +380,6 @@ div#contentDiv section#sec_1 div.imgDiv img.furImg {
 }
 
 
-
-.hr_2px {
-	height: 2px;
-	width: 85%;
-	margin: 13px auto;
-	background-color: red;
-}
-
-.bg_black_20 {
-	background-color: rgba(0, 0, 0, 0.2);
-}
-
-.side_bar_hr{
-	margin: 5px auto 10px;
-}
-
-.hr_w_100{
-	width: 100%;
-}
-
-.hr_w_80{
-	width: 85%;
-}
-
-
 .img_none {
 	display: none;
 }
@@ -420,15 +395,6 @@ div.mainStockContainer {
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: space-around;
-}
-
-div#stockFilters {
-	width: 25%;
-    min-height: 100vh;
-    background-color: #EDEEF2;
-    border-radius: 15px;
-    padding: 15px;
-	color:rgb(72 72 72);
 }
 
 div.stockCardsHolder {
@@ -508,6 +474,167 @@ div.stockCardsHolder div.stockCard img.stockImg {
 }
 
 
+/* -----------------------------------------------------MOBILES----------------------------------------------------- */
+
+/* ------------------ */
+
+div#stockFilters {
+	width: 25%;
+    min-height: 100vh;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+	color:rgb(72 72 72);
+}
+
+#filterHeadding {
+	text-align: center;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	color: rgb(255 0 87);
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+#filter_by_price {
+	margin-bottom: 20px;
+}
+
+.filterOptionHeadding {
+	position: relative;
+	height: 20px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#scaleDiv {
+	overflow: hidden;
+	border-radius: 25px;
+	margin: 5px 0;
+	border: 1px solid black;
+}
+
+#priceScale {
+	appearance: none;
+	background: #1f1f29;
+	border-radius: 15px;
+	height: 11px;
+	outline: none;
+	border: none;
+	display: block;
+	width: 100%;
+	display: flex;
+}
+
+#priceScale::-webkit-slider-thumb {
+	appearance: none;
+	width: 9px;
+	height: 9px;
+	border-radius: 25px;
+	background-color: #10403b;
+	cursor: pointer;
+	border: 2px solid white;
+	box-shadow: -140px 0 0 135px rgb(255 0 87);
+}
+
+#scaleDisplayDiv {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#starting_price,
+#ending_price {
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	width: 60px;
+	text-align: center;
+	line-height: 100%;
+	padding: 5px 2px;
+	font-family: rubik, serif;
+}
+
+.dropDown {
+	cursor: pointer;
+}
+
+.dropDown::before {
+	content: "";
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	top: 25%;
+	right: 5px;
+	transform: rotate(225deg);
+	transition: 0.2s ease;
+}
+
+.filterOpen.dropDown::before {
+	transform: rotate(45deg);
+}
+
+.inputLabel {
+	display: flex;
+	position: relative;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	padding-left: 35px;
+	margin-bottom: 10px;
+	line-height: 100%;
+	height: 24px;
+}
+
+.inputLabel input {
+	width: 0px;
+	height: 0px;
+	border: 7px solid rgb(0 0 0);
+	opacity: 0;
+	position: absolute;
+}
+
+.inputLabel span {
+	width: 15px;
+	height: 15px;
+	border: 1px solid black;
+	background-color: white;
+	border-radius: 50%;
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	cursor: pointer;
+}
+
+.inputLabel input:checked~span {
+	background-color: #00fc00;
+}
+
+.customCheck {
+	position: absolute;
+	left: 0;
+}
+
+.hideDropDownBox {
+	display: none;
+}
+
+/* ----------------------------------------------- */
+
+div#mobiles div.mobileCard.stockCard {
+	width: 150px;
+	height: 100px;
+	border: 2px solid black;
+	border-radius: 7px;
+	justify-content: center;
+}
 
 div.stockListHolder {
 	width: 70%;
@@ -518,20 +645,9 @@ div.stockListHolder {
 	flex-wrap: wrap;
 	align-content: center;
 	margin: 0 auto;
-	background-color: #EDEEF2;
+	background-color: #fff;
 	border-radius: 15px;
     padding: 15px;
-}
-
-/* -----------------------------------------------------MOBILES----------------------------------------------------- */
-
-
-div#mobiles div.mobileCard.stockCard {
-	width: 150px;
-	height: 100px;
-	border: 2px solid black;
-	border-radius: 7px;
-	justify-content: center;
 }
 
 p.cardName {
@@ -637,6 +753,22 @@ div.stocks {
 	justify-content: space-between;
 	align-items: flex-start;
 	padding: 0px 20px;
+	cursor: pointer;
+}
+
+#computers{
+	/* List of computers */
+}
+
+div.computerDivRow{
+	font-size: 0.7rem;
+    height: fit-content;
+	padding: 5px 0;
+}
+
+div.stocks_computer{
+	height: fit-content;
+	margin-bottom: 20px;
 }
 
 div.stocks .productImg {
@@ -646,9 +778,10 @@ div.stocks .productImg {
 }
 
 div.stocks img {
-	height: 100%;
-	margin: 0 auto;
-	display: block;
+	max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
 }
 
 div.stocks div.productInfo {
@@ -662,7 +795,7 @@ div.stocks div.productInfo {
 }
 
 div.stocks div.productInfo ul {
-	margin-top: 1%;
+	margin-top: 5%;
 }
 
 div.stocks div.productInfo ul li,
@@ -684,6 +817,39 @@ div.stocks div.pricing {
 	width: 15%;
 	font-size: 2em;
 	font-family: nunito;
+}
+
+div.computerDivRow div.pricing{
+	font-size: 1rem;
+}
+
+.productDetailsSetDiv h2{
+	font-size: 1em;
+	text-transform: uppercase;
+	padding: 0 5px;
+}
+
+#productSpecificationDiv{
+	width: 100%;
+}
+
+.specs{
+	width: 95%;
+	margin: 20px auto 0;
+}
+
+.specs table{
+	width: 100%;
+	margin-top: 5px;
+}
+
+.specs table tr{
+	display: flex;
+	padding-bottom: 5px;
+}
+
+.specs table tr td{
+	padding: 5px;
 }
 
 
@@ -1098,6 +1264,130 @@ footer#footer div {
 #footer p a:hover {
 	color: white;
 }
+
+
+
+/* -----------------------UTILITY CSS----------------------- */
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table tr{
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.relative{
+	position: relative;
+}
+
+.absolute{
+	position: absolute;
+}
+
+.r_0{
+	right: 0;
+}
+
+.w-100{
+	width: 100%;
+}
+
+.w_80{
+	width: 80%;
+}
+
+.w_75{
+	width: 75%;
+}
+
+.w_25{
+	width: 25%;
+}
+
+.my_5{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.my_10{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.mt_20{
+	margin-top: 20px;
+}
+
+.py_5{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.pb_5{
+	padding-bottom: 5px;
+}
+
+.pb_10{
+	padding-bottom: 10px;
+}
+
+.mx_auto{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.hr{
+	height: 1px;
+	width: 100%;
+}
+
+.hr_2px {
+	height: 2px;
+	margin: 13px auto;
+}
+
+.hr_black{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hr_red{
+	background: red;
+}
+
+.bg_black_20 {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.side_bar_hr{
+	margin: 5px auto 10px;
+}
+
+
+
+.hr_w_80{
+	width: 85%;
+}
+
+.bg-black-100{
+	background-color: #edeef2;
+	color: #484848;
+}
+
+.fs_1em{
+	font-size: 1em;
+}
+
+
+
+
+.ul{
+	list-style: none;
+}
+
 
 
 /* --------------------------------------------------MEDIA QUERY-------------------------------------------------- */

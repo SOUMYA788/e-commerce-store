@@ -4,17 +4,13 @@ const sid = (target, data) => {
 		try {
 			let targetInnerHTML = ""
 			data.forEach((element, index) => {
-
 				if (index < (data.length - 1)) {
 					targetInnerHTML += `
 						<div class="hr_2px bg_black_20" style="width: 100%;"></div>
-
 						<div class="stocks ${element.className}">
-
 							<div class="productImg">
 								<img src="../${element.img}" alt="${element.name}" />
 							</div>
-
 							<div class="productInfo">
 								<h2>${element.name}</h2>
 								<ul class="productDetails">
@@ -26,11 +22,9 @@ const sid = (target, data) => {
 									<li>${element.warrenty}</li>
 								</ul>
 							</div>
-
 							<div class="pricing">
 								<p class="current_price">₹${element.price}</p>
 							</div>
-
 						</div>
 					`
 				} else {
@@ -372,6 +366,7 @@ let filterByName = () => {
 		element.className = "mobileDivRow";
 	});
 	sid(mobiles, nameFilterStock)
+	setSelectedItem(nameFilterStock)
 }
 
 realmeFilterCheckbox.addEventListener("change", () => {
