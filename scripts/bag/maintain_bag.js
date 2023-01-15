@@ -31,7 +31,7 @@ let manageCart = () => {
 				<div class="cpl">
 					<div class="cpl1">
 						<div>
-							<img src="${cpd.img}" alt="image">
+							<img src="../${cpd.img}" alt="image">
 						</div>
 						<ul>
 							<li>

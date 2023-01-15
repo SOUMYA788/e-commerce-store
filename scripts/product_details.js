@@ -1,32 +1,92 @@
 // import { jsonExport } from "./modules/stock_details.js";
 let data = JSON.parse(localStorage.getItem("singleProductDetails"))
 
-
-if (Object.keys(data).length != 0 || localStorage.getItem("singleProductDetails") != null) {
-
+if (Object.keys(data).length > 0 || localStorage.getItem("singleProductDetails") != null) {
+	let dataName = data.name
 	let dataImg = `../${data.img}`;
 	let galleryArr = Object.entries(data.gallery);
-	let otherDetailsObj = Object.entries(data.other_details);
+
+	let details = null;
+	if (data.basic_details) {
+		details = Object.entries(data.basic_details);
+	}
+	let otherDetailsObj = null;
 
 	let galleryStr = "";
-	let otherDetailsStr = "";
+	let otherDetailsTable = "";
+	let detailsInfoList = "";
 
+	// prepare gallery
 	for (let [key, value] of galleryArr) {
 		galleryStr += `
-			<li>
+			<li class = "computer_img_gallery">
 				<img class = "galleryImg" src="../${value}" alt="${data.name}">
 			</li>
 		`
 	}
 
-	for (let [key, value] of otherDetailsObj) {
-		otherDetailsStr += `
-			<tr class="row">
-				<td class="tdr1">${key}</td>
-				<td class="tdr2">${value}</td>
-			</tr>
-		`
-	}	
+	// details info
+	if (data.basic_details) {
+		details = Object.entries(data.basic_details);
+		details.forEach(detailsElement => {
+			let detailsList = detailsElement[1];
+			detailsInfoList += `
+				<li> ${detailsList} </li>
+			`
+		});
+		detailsInfoList += `<li>${data.warrenty}</li>`;
+	}
+
+	// prepare other details
+	if (data.other_details) {
+		otherDetailsObj = Object.entries(data.other_details);
+		if (otherDetailsObj) {
+			let tableRow = ""
+			for (let [key, value] of otherDetailsObj) {
+				tableRow += `
+					<tr class="row">
+						<td class="tdr1">${key}</td>
+						<td class="tdr2">${value}</td>
+					</tr>
+				`
+			}
+			otherDetailsTable += `
+				<table>
+					<tbody>
+						${tableRow}
+					</tbody>
+				</table>
+			`
+		}
+	} else {
+		otherDetailsObj = Object.entries(data.others)
+		otherDetailsObj.forEach(otherDetailsElement => {
+			let headding = otherDetailsElement[0]
+			let detailsObj = Object.entries(otherDetailsElement[1])
+			let detailTableRow = ""
+			detailsObj.forEach(([key, value]) => {
+				//console.log(key, value);
+				detailTableRow += `
+					<tr class="row">
+						<td class="tdr1">${key}</td>
+						<td class="tdr2">${value}</td>
+					</tr>
+				`
+			});
+			otherDetailsTable += `
+			<div class="stockDetailsSections">
+			<h3>${headding}</h3>
+			<div class = "hr w_100 hr_black"></div>
+			<table>
+				<tbody>
+					${detailTableRow}
+				</tbody>
+			</table>
+			</div>
+			`
+		});
+	}
+
 
 	let dataHolder = document.getElementById("stockDetails");
 
@@ -34,7 +94,7 @@ if (Object.keys(data).length != 0 || localStorage.getItem("singleProductDetails"
 	
 		<div class="stockDetailsCol col1">
 			<div id="col1DisplayImg">
-				<img id="mainDisplayImg" class="displayImg" src="${dataImg}" alt="${data.name}">
+				<img id="mainDisplayImg" class="displayImg" src="${dataImg}" alt="${dataName}">
 			</div>
 			
 			<div class="gallery">
@@ -63,24 +123,19 @@ if (Object.keys(data).length != 0 || localStorage.getItem("singleProductDetails"
 			<div class="stockDetailsColDiv">
 				<h3>Details</h3>
 				<ul>
-					<li>${data.warrenty}</li>
-					<li>${data.storage}</li>
-					<li>${data.display}</li>
-					<li>${data.cammera}</li>
-					<li>${data.battery}</li>
-					<li>${data.processor}</li>
+					${detailsInfoList}
 				</ul>
 			</div>
 	
 			<div class="stockDetailsColDiv">
 				<h3>Payment Mode</h3>
 	
-				<div>
+				<div class = "paymentDetailsDiv">
 					<label for="COD">Cash on Delevery</label>
 					<input type="radio" id="cash_on_delevery" name="COD">
 				</div>
 	
-				<div>
+				<div class = "paymentDetailsDiv">
 					<label for="lname">PAY WITH CARDS</label>
 					<input type="radio" id="lname" name="COD" checked>
 				</div>
@@ -88,12 +143,8 @@ if (Object.keys(data).length != 0 || localStorage.getItem("singleProductDetails"
 	
 			<div class="stockDetailsColDiv">
 				<h3>Specification</h3>
-	
-				<table>
-					<tbody>
-						${otherDetailsStr}
-					</tbody>
-				</table>
+				<div class = "hr w_100 hr_black"></div>
+				${otherDetailsTable}
 			</div>
 		</div>
 	`

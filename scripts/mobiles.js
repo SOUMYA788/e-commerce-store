@@ -1,6 +1,9 @@
 // clickStocks(${e.className}, ${e.id})
 const sid = (target, data) => {
-	if (target != null && data != null) {
+	if (!data.length > 0) {
+		target.innerHTML = `<h2 class = "alertInfo"> NOTHING TO SHOW! </h2>`
+	}
+	if (target != null && data != null && data.length > 0) {
 		try {
 			let targetInnerHTML = ""
 			data.forEach((element, index) => {
@@ -75,18 +78,24 @@ const realmeMobiles = [
 		brand: "realmeMobile",
 		className: "realmeMobile",
 		img: "img/mobiles/realme/01/01.webp",
+		name: "realme C31 (Light Silver)",
 		gallery: {
 			img1: "img/mobiles/realme/01/02.webp",
 			img2: "img/mobiles/realme/01/03.webp",
 			img3: "img/mobiles/realme/01/04.webp"
 		},
-		name: "realme C31 (Light Silver)",
+		basic_details: {
+			storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
+			display: "16.56 cm (6.52 inch) HD Display",
+			cammera: "13MP + 2MP + 0.3MP | 5MP Front Camera",
+			battery: "5000 mAh Battery",
+			processor: "Unisoc T612 Processor",
+		},
 		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
 		display: "16.56 cm (6.52 inch) HD Display",
 		cammera: "13MP + 2MP + 0.3MP | 5MP Front Camera",
 		battery: "5000 mAh Battery",
 		processor: "Unisoc T612 Processor",
-		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
 		price: "8,299",
 		calc_price: 8299,
 		other_details: {
@@ -97,7 +106,8 @@ const realmeMobiles = [
 			"Sim Type": "Dual Sim",
 			"OTG Compatable": "Yes",
 			"SAR Value": "Head: <2.0 W/kg, Body: <2.0 W/kg",
-		}
+		},
+		warrenty: "1 Year Warranty for Phone and 6 Months Warranty for In-Box Accessories",
 	},
 
 	{
@@ -109,6 +119,13 @@ const realmeMobiles = [
 			img1: "img/mobiles/realme/02/02.webp",
 			img2: "img/mobiles/realme/02/03.webp",
 			img3: "img/mobiles/realme/02/04.webp"
+		},
+		basic_details: {
+			storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
+			display: "16.56 cm (6.52 inch) HD Display",
+			cammera: "13MP + 2MP + 0.3MP | 5MP Front Camera",
+			battery: "5000 mAh Battery",
+			processor: "Unisoc T612 Processor",
 		},
 		name: "realme C31 (Dark Green)",
 		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
@@ -140,6 +157,13 @@ const realmeMobiles = [
 			img2: "img/mobiles/realme/03/03.webp",
 			img3: "img/mobiles/realme/03/04.webp"
 		},
+		basic_details: {
+			storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
+			display: "16.51 cm (6.5 inch) HD+ Display",
+			cammera: "8MP Rear Camera | 5MP Front Camera",
+			battery: "5000 mAh Lithium Ion Battery",
+			processor: "Unisoc T612 Processor",
+		},
 		name: "realme C30 (Bamboo Green)",
 		storage: "3GB RAM | 32GB ROM | Expandable Upto 1TB",
 		display: "16.51 cm (6.5 inch) HD+ Display",
@@ -170,6 +194,13 @@ const realmeMobiles = [
 			img2: "img/mobiles/realme/04/03.webp",
 			img3: "img/mobiles/realme/04/04.webp"
 		},
+		basic_details: {
+			storage: "6 GB RAM | 128 GB ROM | Expandable Upto 256 GB",
+			display: "16.26 cm (6.4 inch) Full HD+ AMOLED Display",
+			cammera: "108MP + 8MP + 2MP | 16MP Front Camera",
+			battery: "5000 mAh Lithium Ion Battery",
+			processor: "Qualcomm Snapdragon 680 Processor",
+		},
 		name: "realme 9 (Sunburst Gold)",
 		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 256 GB",
 		display: "16.26 cm (6.4 inch) Full HD+ AMOLED Display",
@@ -199,6 +230,13 @@ const realmeMobiles = [
 			img1: "img/mobiles/realme/05/02.webp",
 			img2: "img/mobiles/realme/05/03.webp",
 			img3: "img/mobiles/realme/05/04.webp"
+		},
+		basic_details: {
+			storage: "8 GB RAM | 256 GB ROM",
+			display: "16.26 cm (6.4 inch) Full HD+ AMOLED Display",
+			cammera: "50MP + 8MP + 2MP | 16MP Front Camera",
+			battery: "4500 mAh Li-ion Battery",
+			processor: "Mediatek Dimensity 920 Processor",
 		},
 		name: "realme 9 Pro+ 5G (Aurora Green)",
 		storage: "8 GB RAM | 256 GB ROM",
@@ -232,6 +270,13 @@ const pocoMobiles = [
 			img2: "img/mobiles/poco/01/03.webp",
 			img3: "img/mobiles/poco/01/04.webp"
 		},
+		basic_details: {
+			storage: "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
+			display: "16.51 cm (6.5 inch) Full HD+ Display",
+			cammera: "48MP + 2MP + 2MP | 8MP Front Camera",
+			battery: "5000 mAh Lithium-ion Polymer Battery",
+			processor: "MediaTek Dimensity 700 Processor",
+		},
 		name: "POCO M3 Pro 5G (Black)",
 		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
 		display: "16.51 cm (6.5 inch) Full HD+ Display",
@@ -263,6 +308,13 @@ const pocoMobiles = [
 			img2: "img/mobiles/poco/02/03.webp",
 			img3: "img/mobiles/poco/02/04.webp"
 		},
+		basic_details: {
+			storage: "4 GB RAM | 64 GB ROM | Expandable Upto 1 TB",
+			display: "16.51 cm (6.5 inch) Full HD+ Display",
+			cammera: "48MP + 2MP + 2MP | 8MP Front Camera",
+			battery: "5000 mAh Lithium-ion Polymer Battery",
+			processor: "MediaTek Dimensity 700 Processor",
+		},
 		storage: "4 GB RAM | 64 GB ROM | Expandable Upto 1 TB",
 		display: "16.51 cm (6.5 inch) Full HD+ Display",
 		cammera: "48MP + 2MP + 2MP | 8MP Front Camera",
@@ -292,6 +344,13 @@ const pocoMobiles = [
 			img2: "img/mobiles/poco/03/03.webp",
 			img3: "img/mobiles/poco/03/04.webp"
 		},
+		basic_details: {
+			storage: "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
+			display: "16.51 cm (6.5 inch) Full HD+ Display",
+			cammera: "48MP + 2MP + 2MP | 8MP Front Camera",
+			battery: "5000 mAh Lithium-ion Polymer Battery",
+			processor: "MediaTek Dimensity 700 Processor",
+		},
 		name: "POCO M3 Pro 5G (Cool Blue)",
 		storage: "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB",
 		display: "16.51 cm (6.5 inch) Full HD+ Display",
@@ -314,7 +373,6 @@ const pocoMobiles = [
 ]
 // .concat(realmeMobiles, pocoMobiles)
 let allMobiles = [...realmeMobiles, ...pocoMobiles];
-
 allMobiles.forEach(element => {
 	element.className = "mobileDivRow";
 });
@@ -324,27 +382,61 @@ const mobiles = document.getElementById("mobiles")
 sid(mobiles, allMobiles)
 
 
-// FILTER PROCESS...
+// click any item for further process as user...
+let setSelectedItem = (itemDataArr) => {
+	let stocks = document.querySelectorAll(".stocks")
 
-let priceScale = document.querySelector("#priceScale")
-let priceScaleValue = parseInt(priceScale.value);
+	stocks.forEach((element, elementIndex) => {
+		element.addEventListener("click", () => {
+			localStorage.setItem("singleProductDetails", JSON.stringify(itemDataArr[elementIndex]))
+			window.open("./product_details.html", "_blank")
+		})
+	});
+}
+
+setSelectedItem(allMobiles)
+
+
 
 // FILTER BY PRICE
-priceScale.addEventListener("change", () => {
 
-	document.querySelector("#ending_price").innerText = `₹${priceScale.value}`
+let filterByPrice = (listDevice) => {
+	let priceScale = document.querySelector("#priceScale")
+	let endingPrice = document.querySelector("#ending_price");
+	endingPrice.disabled = true
+	priceScale.value = "50000"
+	endingPrice.value = `₹${priceScale.value}`
 
-	priceScaleValue = parseInt(priceScale.value);
+	const inputManage = (value) => {
+		endingPrice.value = `₹${value}`
+		priceScale.value = value
+	}
 
-	let priceFilteredStock = allMobiles.filter((value, index) => {
-		let mobilePriceStr = value.price;
-		let mobilePrice = parseInt(`${mobilePriceStr.split(",")[0]}${mobilePriceStr.split(",")[1]}`);
-		if (mobilePrice <= priceScaleValue) {
-			return value
-		}
-	});
-	sid(mobiles, priceFilteredStock)
-})
+	const priceScaleManage = () => {
+		let priceFilteredStock = listDevice.filter((value, index) => {
+			let mobilePriceStr = value.price;
+			let mobilePrice = parseInt(`${mobilePriceStr.split(",")[0]}${mobilePriceStr.split(",")[1]}`);
+			if (mobilePrice <= parseInt(priceScale.value)) {
+				return value
+			}
+		});
+		sid(mobiles, priceFilteredStock)
+		setSelectedItem(priceFilteredStock)
+	}
+
+	priceScaleManage()
+
+	priceScale.addEventListener("change", () => {
+		inputManage(priceScale.value)
+		priceScaleManage()
+	})
+	priceScale.addEventListener("mousemove", () => {
+		inputManage(priceScale.value)
+		priceScaleManage()
+	})
+}
+
+filterByPrice(allMobiles)
 
 // FILTER BY NAME
 const realmeFilterCheckbox = document.querySelector("#realmeFilterCheckbox");
@@ -355,18 +447,26 @@ const samsungFilterCheckbox = document.querySelector("#samsungFilterCheckbox");
 
 let filterByName = () => {
 	let nameFilterStock = [];
-	let setStock = (checkBoxName, stockName) => { 
+	let setStock = (checkBoxName, stockName) => {
 		if (checkBoxName.checked) {
 			nameFilterStock = nameFilterStock.concat(stockName)
 		}
 	}
 	setStock(realmeFilterCheckbox, realmeMobiles)
 	setStock(pocoFilterCheckbox, pocoMobiles)
-	nameFilterStock.forEach(element => {
-		element.className = "mobileDivRow";
-	});
-	sid(mobiles, nameFilterStock)
-	setSelectedItem(nameFilterStock)
+
+	if (nameFilterStock.length > 0) {
+		nameFilterStock.forEach(element => {
+			element.className = "mobileDivRow";
+		});
+		sid(mobiles, nameFilterStock)
+		filterByPrice(nameFilterStock)
+		setSelectedItem(nameFilterStock)
+	} else {
+		sid(mobiles, allMobiles)
+		filterByPrice(allMobiles)
+		setSelectedItem(allMobiles)
+	}
 }
 
 realmeFilterCheckbox.addEventListener("change", () => {
@@ -376,19 +476,3 @@ realmeFilterCheckbox.addEventListener("change", () => {
 pocoFilterCheckbox.addEventListener("change", () => {
 	filterByName();
 })
-
-
-
-// click any item for further process as user...
-let setSelectedItem = (itemDataArr) => {
-	let stocks = document.querySelectorAll(".stocks")
-
-	stocks.forEach((element, elementIndex) => {
-		element.addEventListener("click", () => {
-			localStorage.setItem("singleProductDetails", JSON.stringify(itemDataArr[elementIndex]))
-			window.location = "./product_details.html"
-		})
-	});
-}
-
-setSelectedItem(allMobiles)

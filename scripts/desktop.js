@@ -1,6 +1,7 @@
-// clickStocks(${e.className}, ${e.id})
-console.log("attached desktop");
-const sid = (target, data) => {
+const setProduct = (target, data) => {
+	if (!data.length > 0) {
+		target.innerHTML = `<h2 class = "alertInfo"> NOTHING TO SHOW! </h2>`
+	}
 	if (target != null && data != null && data.length > 0) {
 		try {
 			let compileHTML = ""
@@ -35,8 +36,8 @@ const sid = (target, data) => {
 						</div>
 					</div>
 				`
-				target.innerHTML = compileHTML
 			});
+			target.innerHTML = compileHTML
 		} catch (error) {
 			console.log(error);
 			console.log("AN ERROR OCCURED");
@@ -44,21 +45,22 @@ const sid = (target, data) => {
 	}
 }
 
-
 const lenovoComputers = [
 	{
 		id: "0",
 		brand: "lenovoComputers",
 		className: "lenovoComputers",
-		"img": "img/desktop/lenovo/01/01.webp",
-		"name": "Lenovo Ideacentre 320 Celeron",
+		"img": "img/desktop/lenovo/01/01.webp", // 1
+		"name": "Lenovo Ideacentre 320 Celeron", // 1
+
 		"basic_details": {
 			"storage_info": "1 x 4GB DDR4 RAM | 1TB Hard Drive",
 			"display_info": "19.5 inch HD+ LED Backlit Display | 1440 x 900 Pixel",
 			"processor_info": "Intel Core i3 (10th Gen) | 2.1 GHz with Turbo Frequency Upto 4.1 GHz"
 		},
+
 		warrenty: "1 Year Lenovo Warranty and Free Transit Insurance.",
-		"gallery": {
+		gallery: {
 			img1: "img/desktop/lenovo/01/02.webp",
 			img2: "img/desktop/lenovo/01/03.webp",
 			img3: "img/desktop/lenovo/01/04.webp"
@@ -121,7 +123,7 @@ const lenovoComputers = [
 			"display_info": "19.5 inch HD+ LED Backlit Display | 1440 x 900 Pixel",
 			"processor_info": "Intel Core i3 (10th Gen) | 2.1 GHz with Turbo Frequency Upto 4.1 GHz",
 		},
-		"GALLERY": {
+		"gallery": {
 			img1: "img/desktop/lenovo/02/02.webp",
 			img2: "img/desktop/lenovo/02/03.webp",
 			img3: "img/desktop/lenovo/02/04.webp"
@@ -178,7 +180,6 @@ const lenovoComputers = [
 				"OTHER PORTS": "1 x Power Connector, 1 x Ethernet (RJ-45), 1 x Headphone / Microphone Combo Jack (3.5mm)",
 				"POWER CONSUPTION": "65 W"
 			},
-
 		},
 		"warrenty": "1 Year Onsite Warranty",
 		price: "56,490",
@@ -198,7 +199,7 @@ const asusComputers = [
 			"display_info": "23.8 Inch Full HD LED | 1920 x 1080 Pixels",
 			"processor_info": "AMD Ryzen 3 Dual Core | 2.6 GHz with Turbo Boost Upto 3.5 GHz",
 		},
-		gallery: {
+		"gallery": {
 			img1: "img/desktop/asus/01/02.webp",
 			img2: "img/desktop/asus/01/03.webp",
 			img3: "img/desktop/asus/01/04.webp"
@@ -267,12 +268,13 @@ const asusComputers = [
 		className: "asusComputers",
 		"img": "img/desktop/asus/02/01.webp",
 		"name": "ASUS Vivo AiO V222 Core i3",
+
 		"basic_details": {
 			"storage_info": "8GB DDR4 RAM | 1TB Hard Drive | 256GB SSD",
 			"display_info": "21.5 Inch Full HD | 1920 x 1080 Pixels | No Touch Support",
 			"processor_info": "Intel Core i3 | 2.1 GHz upto max turbo frequency 4.1 GHz",
 		},
-		gallery: {
+		"gallery": {
 			img1: "img/desktop/asus/02/02.webp",
 			img2: "img/desktop/asus/02/03.webp",
 			img3: "img/desktop/asus/02/04.webp"
@@ -331,76 +333,97 @@ allComputers.forEach(element => {
 	element.className = "computerDivRow";
 });
 
-const mobiles = document.getElementById("computers")
+const computers = document.getElementById("computers")
+setProduct(computers, allComputers)
 
-sid(mobiles, allComputers)
-
-
-// FILTER PROCESS...
-
-let priceScale = document.querySelector("#priceScale")
-let priceScaleValue = parseInt(priceScale.value);
-
-// FILTER BY PRICE
-priceScale.addEventListener("change", () => {
-
-	document.querySelector("#ending_price").innerText = `₹${priceScale.value}`
-
-	priceScaleValue = parseInt(priceScale.value);
-
-	let priceFilteredStock = allComputers.filter((value, index) => {
-		let mobilePriceStr = value.price;
-		let mobilePrice = parseInt(`${mobilePriceStr.split(",")[0]}${mobilePriceStr.split(",")[1]}`);
-		if (mobilePrice <= priceScaleValue) {
-			return value
-		}
-	});
-	sid(mobiles, priceFilteredStock)
-})
-
-// FILTER BY NAME
-const realmeFilterCheckbox = document.querySelector("#realmeFilterCheckbox");
-const pocoFilterCheckbox = document.querySelector("#pocoFilterCheckbox");
-const oppoFilterCheckbox = document.querySelector("#oppoFilterCheckbox");
-const vivoFilterCheckbox = document.querySelector("#vivoFilterCheckbox");
-const samsungFilterCheckbox = document.querySelector("#samsungFilterCheckbox");
-
-let filterByName = () => {
-	let nameFilterStock = [];
-	let setStock = (checkBoxName, stockName) => {
-		if (checkBoxName.checked) {
-			nameFilterStock = nameFilterStock.concat(stockName)
-		}
-	}
-	setStock(realmeFilterCheckbox, lenovoComputers)
-	setStock(pocoFilterCheckbox, asusComputers)
-	nameFilterStock.forEach(element => {
-		element.className = "computerDivRow";
-	});
-	sid(mobiles, nameFilterStock)
-	setSelectedItem(nameFilterStock)
-}
-
-realmeFilterCheckbox.addEventListener("change", () => {
-	filterByName();
-})
-
-pocoFilterCheckbox.addEventListener("change", () => {
-	filterByName();
-})
-
-
-
-// click any item for further process as user...
+// process after item select....
 let setSelectedItem = (itemDataArr) => {
 	let stocks = document.querySelectorAll(".stocks")
-
 	stocks.forEach((element, elementIndex) => {
 		element.addEventListener("click", () => {
 			localStorage.setItem("singleProductDetails", JSON.stringify(itemDataArr[elementIndex]))
-			window.location = "./product_details.html"
+			window.open("./product_details.html", "_blank")
 		})
 	});
 }
 
+
+// FILTER BY PRICE
+let filterByPrice = (listDevice) => {
+	let priceScale = document.querySelector("#priceScale")
+	let endingPrice = document.querySelector("#ending_price");
+	endingPrice.disabled = true
+	priceScale.value = "50000"
+	endingPrice.value = `₹${priceScale.value}`
+
+	const inputManage = (value) => {
+		endingPrice.value = `₹${value}`
+		priceScale.value = value
+	}
+	
+	const priceScaleManage = () => {
+		let priceFilteredStock = listDevice.filter((stockItems, index) => {
+			let computerPricestr = stockItems.price;
+			let computerPrice = parseInt(`${computerPricestr.split(",")[0]}${computerPricestr.split(",")[1]}`);
+			if (computerPrice <= parseInt(priceScale.value)) {
+				return stockItems
+			}
+		});
+		setProduct(computers, priceFilteredStock)
+		setSelectedItem(priceFilteredStock)
+	}
+
+	priceScaleManage();
+	
+	priceScale.addEventListener("change", () => { 
+		inputManage(priceScale.value)
+		priceScaleManage()
+	});
+	priceScale.addEventListener("mousemove", () => { 
+		inputManage(priceScale.value)
+		priceScaleManage()
+	});
+}
+
+
+// FILTER BY NAME 
+
+
+let filterByName = () => {
+	const lenovoFilterCheckbox = document.querySelector("#lenovoFilterCheckbox");
+	const asusFilterCheckbox = document.querySelector("#asusFilterCheckbox");
+	const allCheckBox = [lenovoFilterCheckbox, asusFilterCheckbox]
+
+	let filterProcess = () => {
+		let nameFilterStock = [];
+		let setStock = (checkBoxName, stockName) => {
+			if (checkBoxName.checked) {
+				nameFilterStock = nameFilterStock.concat(stockName)
+			}
+		}
+		setStock(lenovoFilterCheckbox, lenovoComputers)
+		setStock(asusFilterCheckbox, asusComputers)
+
+		if (nameFilterStock.length > 0) {
+			nameFilterStock.forEach(element => {
+				element.className = "computerDivRow";
+			});
+			setProduct(computers, nameFilterStock)
+			filterByPrice(nameFilterStock)
+		} else {
+			setProduct(computers, allComputers)
+			filterByPrice(allComputers)
+		}
+	}
+	lenovoFilterCheckbox.addEventListener("change", () => {
+		filterProcess();
+	})
+
+	asusFilterCheckbox.addEventListener("change", () => {
+		filterProcess();
+	})
+}
+
+filterByPrice(allComputers)
+filterByName()
 setSelectedItem(allComputers)

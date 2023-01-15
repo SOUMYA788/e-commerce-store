@@ -57,42 +57,28 @@
 		<div class="mainStockContainer">
 			<!-- STOCK FILTERS -->
 			<div id="stockFilters">
-
 				<h2 id="filterHeadding">FILTERS</h2>
-
 				<div class="hr_2px bg_black_20 side_bar_hr hr_w_100"></div>
-
 				<div id="filter_by_price">
-
 					<p class="filterOptionHeadding">PRICE</p>
-
 					<div id="scaleDiv">
-						<input type="range" name="priceScale" id="priceScale" min="0" max="40000" value="26000"
-							onmousemove="rangeSlide(this.value)">
+						<input type="range" name="priceScale" id="priceScale" min="0" max="150000">
 					</div>
-
 					<div id="scaleDisplayDiv">
 						<span id="starting_price">₹0</span>
 						to
-						<span id="ending_price">₹0</span>
-
+						<input type="text" name="ending_price" id="ending_price"></input>
 					</div>
-
 				</div>
-
 				<div id="filterByBrand">
-
 					<p class="filterOptionHeadding dropDown" id="filterByBrandHeadding">BRANDS</p>
 					<div class="hr_2px bg_black_20 side_bar_hr hr_w_100"></div>
-
 					<div class="filterBrandNames" id="filterBrandNames">
-
 						<label class="inputLabel">
 							<input type="checkbox" id="lenovoFilterCheckbox">
 							<span></span>
 							LENOVO
 						</label>
-
 						<label class="inputLabel">
 							<input type="checkbox" id="asusFilterCheckbox">
 							<span></span>
@@ -100,31 +86,11 @@
 						</label>
 					</div>
 				</div>
-
 			</div>
-
-			<div id="computers" class="stockListHolder indvStock">
-				<div class="stocks computerDivRow">
-					<div class="productImg">
-						<img src="../img/desktop/lenovo/01/01.webp" alt="Lenovo Ideacentre 320 Celeron">
-					</div>
-					<div class="productInfo computer_product_info">
-						<h2>Lenovo Ideacentre 320 Celeron</h2>
-						<ul class="productDetails">
-							<li>1 x 4GB DDR4 RAM || 1TB Hard Drive</li>
-							<li>19.5 inch HD+ LED Backlit Display || 1440 x 900 Pixel</li>
-						</ul>
-					</div>
-					<div class="pricing">
-						<p class="current_price">₹23,990</p>
-					</div>
-				</div>
-			</div>
-
+			<div id="computers" class="stockListHolder indvStock"> </div>
 		</div>
 		<footer id="footer"></footer>
 	</div>
-
 	<script src="../scripts/desktop.js"></script>
 	<script src="../scripts/footer.js"></script>
 </body>
