@@ -753,6 +753,6 @@ button.swiper-pagination-bullet {
 @media screen and (max-width:425px) {
 
 	.swiper-wrapper{
-		height: 75vh;
+		height: 100%;
 	}
 }

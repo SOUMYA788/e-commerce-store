@@ -6,12 +6,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../style/style.css">
+	<!-- <link rel="stylesheet" href="../style/products_details.css"> -->
 	<link rel="stylesheet" href="../style/all.min.css">
-
 	<style>
-		nav#departments li.navLi ul li a#mobiles {
-			color: white;
+		p span {
+			display: inline-block;
 		}
+
 		.navStockCard {
 			width: 85%;
 			height: 40px;
@@ -41,9 +42,7 @@
 			text-align: center;
 		}
 	</style>
-
-	<title>MOBILES</title>
-
+	<title>SMART-WEAR</title>
 </head>
 
 <body>
@@ -114,104 +113,11 @@
 				</ul>
 			</div>
 		</nav>
-
-		<div class="mobileListContainer">
-			<!-- STOCK FILTERS -->
-			<div id="stockFilters">
-
-				<h2 id="filterHeadding">FILTERS</h2>
-				
-				<div class="hr_2px bg_black_20 side_bar_hr hr_w_100"></div>
-
-				<div id="filter_by_price">
-
-					<p class="filterOptionHeadding">PRICE</p>
-
-					<div id="scaleDiv">
-						<input type="range" name="priceScale" id="priceScale" min="0" max="40000" value="26000"
-							onmousemove="rangeSlide(this.value)">
-					</div>
-
-					<div id="scaleDisplayDiv">
-						<span id="starting_price">₹0</span>
-						to
-						<input type="text" name="ending_price"  id="ending_price"></input>
-
-					</div>
-
-				</div>
-
-				<div id="filterByBrand">
-
-					<p class="filterOptionHeadding dropDown" id="filterByBrandHeadding">BRANDS</p>
-					<div class="hr_2px bg_black_20 side_bar_hr hr_w_100"></div>
-
-					<div class="filterBrandNames" id="filterBrandNames">
-
-						<label class="inputLabel">
-							<input type="checkbox" id="realmeFilterCheckbox">
-							<span></span>
-							REALME
-						</label>
-
-						<label class="inputLabel">
-							<input type="checkbox" id="pocoFilterCheckbox">
-							<span></span>
-							POCO
-						</label>
-
-						<label class="inputLabel">
-							<input type="checkbox" id="oppoFilterCheckbox">
-							<span></span>
-							OPPO
-						</label>
-
-						<label class="inputLabel">
-							<input type="checkbox" id="vivoFilterCheckbox">
-							<span></span>
-							VIVO
-						</label>
-
-						<label class="inputLabel">
-							<input type="checkbox" id="samsungFilterCheckbox">
-							<span></span>
-							SAMSUNG
-						</label>
-					</div>
-				</div>
-
-			</div>
-			<div id="mobiles" class="stockListHolder">
-			
-			</div>
-		</div>
-		<footer id="footer"></footer>
 	</div>
-
-	<script>
-
-		let filterByBrandHeadding = document.getElementById("filterByBrandHeadding")
-		let filterBrandNames = document.getElementById("filterBrandNames")
-
-		function rangeSlide(value) {
-			document.querySelector("#ending_price").innerText = `₹${value}`
-		}
-
-		function manageDropDownBox(dropDownBtn, dropDownBox) {
-			dropDownBtn.addEventListener("click", (e) => {
-				e.stopPropagation();
-				dropDownBox.classList.toggle("hideDropDownBox")
-				dropDownBtn.classList.toggle("filterOpen")
-			})
-		}
-
-		manageDropDownBox(filterByBrandHeadding, filterBrandNames)
-
-	</script>
-
-	<script type="module" src="../scripts/mobiles.js"></script>
-	<script src="../scripts/bag/item_nos.js"></script>
+	<footer id="footer"></footer>
 	<script src="../scripts/footer.js"></script>
+	<script src="../scripts/bag/item_nos.js"></script>
+
 </body>
 
 </html>

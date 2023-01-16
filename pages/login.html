@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../style/style.css">
+	<link rel="stylesheet" href="../style/all.min.css">
+	<style>
+		nav#departments li.navLi a.nav_a#homePage {
+			color: #FF0057;
+		}
+		.navStockCard {
+			width: 85%;
+			height: 40px;
+			cursor: pointer;
+			margin: 0 auto;
+			/* 
+			-webkit-box-shadow: 0px 0px 10px 0px rgba(199, 199, 199, 1);
+			-moz-box-shadow: 0px 0px 10px 0px rgba(199, 199, 199, 1);
+			box-shadow: 0px 0px 10px 0px #c7c7c7; 
+			border: 2px solid transparent;
+			border-radius: 50%;
+			padding: 10px;
+			*/
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+
+		.navStockCard .navStockImg {
+			max-height: 100%;
+			max-width: 100%;
+			object-fit: contain;
+		}
+
+		.navStockName {
+			text-align: center;
+		}
+	</style>
 	<style>
 		#loginSignupDiv {
 			width: 300px;
@@ -149,12 +181,20 @@
 
 		<nav id="topNav">
 			<div class="topNavDiv" id="top_main_nav">
-				<a href="../index.html">letsPURCHASE.com</a>
+				<div class="flexbox flex_row w_50">
+					<a href="./index.html">letsPURCHASE.com</a>
+					<a class="bagPage nav_a" href="./bag.html">
+						<span class="licon cart_span">
+							<i class="fa-solid fa-cart-shopping"></i>
+						</span>
+						CART
+						<span class="cart-item-no">0</span>
+					</a>
+				</div>
 				<input type="search" name="search" id="search" placeholder="SEARCH">
+
 			</div>
-
 			<div class="topNavDiv" id="departments">
-
 				<ul id="navUl">
 					<li class="navLi">
 						<a id="homePage" class="nav_a" href="../index.html">
@@ -164,9 +204,34 @@
 							HOME
 						</a>
 					</li>
+
 					<li class="navLi">
-						<a id="productPage" class="nav_a" href="./products.html">PRODUCTS</a>
+						<a href="./mobiles.html" class="nav_a">
+							<div id="mobilesPage" class="navStockCard">
+								<img class="navStockImg" src="../img/mobiles/01.jpg" alt="mobiles">
+								<p class="navStockName">MOBILES</p>
+							</div>
+						</a>
 					</li>
+
+					<li class="navLi">
+						<a href="./desktop.html" class="nav_a">
+							<div id="desktopPage" class="navStockCard">
+								<img class="navStockImg" src="../img/desktop/01.jpg" alt="mobiles">
+								<p class="navStockName">DESKTOP</p>
+							</div>
+						</a>
+					</li>
+
+					<li class="navLi">
+						<a href="./smart_wear.html" class="nav_a">
+							<div id="smartWearPage" class="navStockCard">
+								<img class="navStockImg" src="../img/smart wear/01.jpg" alt="mobiles">
+								<p class="navStockName">SMART WEAR</p>
+							</div>
+						</a>
+					</li>
+
 					<li class="navLi">
 						<a id="loginPage" class="nav_a" href="./login.html">
 							<span class="licon">
@@ -175,15 +240,7 @@
 							LOG IN
 						</a>
 					</li>
-					<li class="navLi">
-						<a id="bagPage" class="nav_a" href="./bag.html">
-							<span class="licon">
-								<i class="fa-solid fa-cart-shopping"></i>
-							</span>
-							SHOPPING BAG
-							<p id="cart-item-no">0</p>
-						</a>
-					</li>
+
 				</ul>
 			</div>
 		</nav>

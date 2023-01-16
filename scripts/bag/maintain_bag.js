@@ -1,13 +1,9 @@
 let manageCart = () => {
-
 	let changePositiveQTY = document.getElementsByClassName("changePosQTY");
 	let changeNegetiveQTY = document.getElementsByClassName("changeNegQTY");
 	let cartProductQTY = document.getElementsByClassName("cartProductQTY");
-
 	// SET ONE
-
 	// add new products in bag and semountinusly update total value of product in cart.
-
 	const cartProductList = document.querySelector("#cartProductList")
 
 	let cartProductData = []
