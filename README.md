@@ -1,5 +1,3 @@
-Project Name: letsPURCHASE.COM (E-COMMERCE STORE)
+Project Name: letsPURCHASE.COM (a E-Commerce Store)
 
 A simple project with HTML, CSS and Vanila JavaScript
-
-Project Completed with only one demo link.
