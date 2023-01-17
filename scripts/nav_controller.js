@@ -1,6 +1,8 @@
-let navController = document.querySelector("#navController");
-let navDash = navController.querySelectorAll(".navDash");
-let departmentList = document.querySelectorAll(".departmentLi");
+const navController = document.querySelector("#navController");
+const filterToggleBtn = document.querySelector("#filterToggleBtn");
+const departmentList = document.querySelectorAll(".departmentLi");
+const departments = document.querySelector("#departments")
+const stockFilters = document.querySelector("#stockFilters");
 
 const activeToggle = (btn, btnDash, slideBar, hideClass) => {
 	btn.addEventListener("click", () => {
@@ -19,6 +21,11 @@ const activeToggle = (btn, btnDash, slideBar, hideClass) => {
 	})
 }
 
-activeToggle(navController, navDash, document.querySelector("#departments"), "hideDepartment")
-
-activeToggle(document.querySelector("#filterToggleBtn"), document.querySelectorAll(".filterBtnSign"), document.querySelector("#stockFilters"), "hideStockFilter")
+if (navController) {
+	let navDash = navController.querySelectorAll(".navDash");
+	activeToggle(navController, navDash, departments, "hideDepartment")
+}
+if (filterToggleBtn) {
+	let filterBtnSign = filterToggleBtn.querySelectorAll(".filterBtnSign")
+	activeToggle(filterToggleBtn, filterBtnSign, stockFilters, "hideStockFilter")
+}

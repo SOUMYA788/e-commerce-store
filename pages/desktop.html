@@ -27,7 +27,13 @@
 		<nav id="topNav">
 			<div class="topNavDiv" id="top_main_nav">
 				<div class="flexbox flex_row w_50">
-					<a href="./index.html">letsPURCHASE.com</a>
+					<div id="navController" class="toggleBtn space_between">
+						<div class="toggleSign navDash"></div>
+						<div class="toggleSign navDash"></div>
+						<div class="toggleSign navDash"></div>
+					</div>
+
+					<a href="../index.html">letsPURCHASE.com</a>
 					<a class="bagPage nav_a" href="./bag.html">
 						<span class="licon cart_span">
 							<i class="fa-solid fa-cart-shopping"></i>
@@ -39,7 +45,7 @@
 				<input type="search" name="search" id="search" placeholder="SEARCH">
 
 			</div>
-			<div class="topNavDiv" id="departments">
+			<div class="topNavDiv hideDepartment short_top_nav" id="departments">
 				<ul id="navUl">
 					<li class="navLi">
 						<a id="homePage" class="nav_a" href="../index.html">
@@ -90,9 +96,17 @@
 			</div>
 		</nav>
 
-		<div class="mainStockContainer">
+		<div id="desktopListContainer">
 			<!-- STOCK FILTERS -->
-			<div id="stockFilters">
+			<div id="filterToggleBtnCover" class="btnCover" class="absolute">
+				<div id="filterToggleBtn" class="space_between">
+					<div class="toggleSign filterBtnSign bg_red"></div>
+					<div class="toggleSign filterBtnSign bg_red"></div>
+					<div class="toggleSign filterBtnSign bg_red"></div>
+				</div>
+			</div>
+
+			<div id="stockFilters" class="hideStockFilter">
 				<h2 id="filterHeadding">FILTERS</h2>
 				<div class="hr_2px bg_black_20 side_bar_hr hr_w_100"></div>
 				<div id="filter_by_price">
@@ -127,6 +141,7 @@
 		</div>
 		<footer id="footer"></footer>
 	</div>
+	<script src="../scripts/nav_controller.js"></script>
 	<script src="../scripts/desktop.js"></script>
 	<script src="../scripts/bag/item_nos.js"></script>
 	<script src="../scripts/footer.js"></script>

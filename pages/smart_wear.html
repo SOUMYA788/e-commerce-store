@@ -31,6 +31,11 @@
 		<nav id="topNav">
 			<div class="topNavDiv" id="top_main_nav">
 				<div class="flexbox flex_row w_50">
+					<div id="navController" class="toggleBtn space_between">
+						<div class="toggleSign navDash"></div>
+						<div class="toggleSign navDash"></div>
+						<div class="toggleSign navDash"></div>
+					</div>
 					<a href="./index.html">letsPURCHASE.com</a>
 					<a class="bagPage nav_a" href="./bag.html">
 						<span class="licon cart_span">
@@ -43,7 +48,7 @@
 				<input type="search" name="search" id="search" placeholder="SEARCH">
 
 			</div>
-			<div class="topNavDiv" id="departments">
+			<div class="topNavDiv hideDepartment short_top_nav" id="departments">
 				<ul id="navUl">
 					<li class="navLi">
 						<a id="homePage" class="nav_a" href="../index.html">
@@ -64,7 +69,7 @@
 					</li>
 
 					<li class="navLi">
-						<a href="./desktop.html" class="nav_a">
+						<a href="../desktop.html" class="nav_a">
 							<div id="desktopPage" class="navStockCard">
 								<img class="navStockImg" src="../img/desktop/01.jpg" alt="mobiles">
 								<p class="navStockName">DESKTOP</p>
@@ -93,8 +98,12 @@
 				</ul>
 			</div>
 		</nav>
+
+		<div id="mobileListContainer" class = "relative"></div>
+		<footer id="footer"></footer>
 	</div>
-	<footer id="footer"></footer>
+
+	<script src="../scripts/nav_controller.js"></script>
 	<script src="../scripts/footer.js"></script>
 	<script src="../scripts/bag/item_nos.js"></script>
 

@@ -39,7 +39,7 @@
 						<div class="toggleSign navDash"></div>
 						<div class="toggleSign navDash"></div>
 					</div>
-					<a href="./index.html">letsPURCHASE.com</a>
+					<a href="../index.html">letsPURCHASE.com</a>
 					<a class="bagPage nav_a" href="./bag.html">
 						<span class="licon cart_span">
 							<i class="fa-solid fa-cart-shopping"></i>
@@ -51,7 +51,7 @@
 				<input type="search" name="search" id="search" placeholder="SEARCH">
 
 			</div>
-			<div class="topNavDiv hideDepartment" id="departments">
+			<div class="topNavDiv hideDepartment short_top_nav" id="departments">
 				<ul id="navUl">
 					<li class="navLi departmentLi">
 						<a id="homePage" class="nav_a" href="../index.html">
@@ -63,7 +63,7 @@
 					</li>
 
 					<li class="navLi departmentLi">
-						<a href="./mobiles.html" class="nav_a">
+						<a href="../mobiles.html" class="nav_a">
 							<div id="mobilesPage" class="navStockCard">
 								<img class="navStockImg" src="../img/mobiles/01.jpg" alt="mobiles">
 								<p class="navStockName">MOBILES</p>
@@ -102,7 +102,7 @@
 			</div>
 		</nav>
 
-		<div class="mobileListContainer relative">
+		<div id="mobileListContainer" class = "relative">
 			<!-- STOCK FILTERS -->
 			<div id="filterToggleBtnCover" class="btnCover" class="absolute">
 				<div id="filterToggleBtn" class="space_between">
@@ -112,27 +112,19 @@
 				</div>
 			</div>
 			<div id="stockFilters" class="hideStockFilter">
-
 				<h2 id="filterHeadding">FILTERS</h2>
-
 				<div class="hr_2px bg_black_20 side_bar_hr hr_w_100"></div>
-
 				<div id="filter_by_price">
-
 					<p class="filterOptionHeadding">PRICE</p>
-
 					<div id="scaleDiv">
 						<input type="range" name="priceScale" id="priceScale" min="0" max="40000" value="26000"
 							onmousemove="rangeSlide(this.value)">
 					</div>
-
 					<div id="scaleDisplayDiv">
 						<span id="starting_price">₹0</span>
 						to
 						<input type="text" name="ending_price" id="ending_price"></input>
-
 					</div>
-
 				</div>
 
 				<div id="filterByBrand">
