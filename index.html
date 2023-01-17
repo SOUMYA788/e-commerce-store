@@ -13,25 +13,6 @@
 			color: #FF0057;
 		}
 
-		.navStockCard {
-			width: 85%;
-			height: 40px;
-			cursor: pointer;
-			margin: 0 auto;
-			/* 
-			-webkit-box-shadow: 0px 0px 10px 0px rgba(199, 199, 199, 1);
-			-moz-box-shadow: 0px 0px 10px 0px rgba(199, 199, 199, 1);
-			box-shadow: 0px 0px 10px 0px #c7c7c7; 
-			border: 2px solid transparent;
-			border-radius: 50%;
-			padding: 10px;
-			*/
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-evenly;
-		}
-
 		.navStockCard .navStockImg {
 			max-height: 100%;
 			max-width: 100%;
@@ -50,6 +31,11 @@
 		<nav id="topNav">
 			<div class="topNavDiv" id="top_main_nav">
 				<div class="flexbox flex_grow_1 flex_row w_50">
+					<div id="navController" class="toggleBtn space_between">
+						<div class="toggleSign navDash"></div>
+						<div class="toggleSign navDash"></div>
+						<div class="toggleSign navDash"></div>
+					</div>
 					<a href="./index.html">letsPURCHASE.com</a>
 					<a class="bagPage nav_a" href="./pages/bag.html">
 						<span class="licon cart_span">
@@ -63,12 +49,12 @@
 				<!-- <input type="search" name="search" id="search" placeholder="SEARCH"> -->
 
 			</div>
-			<div class="topNavDiv" id="departments">
+			<div class="topNavDiv hideDepartment" id="departments">
 				<ul id="navUl">
 					<li class="navLi">
-						<a id="homePage" class="nav_a" href="./index.html">
+						<a id="homePage" class="nav_a flexbox align_center justify_start" href="./index.html">
 							<span class="licon">
-								<i class="fa-solid fa-house"></i>
+								<i class="fa-solid fa-house fs_2em"></i>
 							</span>
 							HOME
 						</a>
@@ -102,9 +88,9 @@
 					</li>
 
 					<li class="navLi">
-						<a id="loginPage" class="nav_a" href="./pages/login.html">
+						<a id="loginPage" class="nav_a flexbox align_center justify_start" href="./pages/login.html">
 							<span class="licon">
-								<i class="fa-solid fa-arrow-right-to-bracket"></i>
+								<i class="fa-solid fa-arrow-right-to-bracket fs_2em"></i>
 							</span>
 							LOG IN
 						</a>

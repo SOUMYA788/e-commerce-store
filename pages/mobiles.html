@@ -12,24 +12,6 @@
 		nav#departments li.navLi ul li a#mobiles {
 			color: white;
 		}
-		.navStockCard {
-			width: 85%;
-			height: 40px;
-			cursor: pointer;
-			margin: 0 auto;
-			/* 
-			-webkit-box-shadow: 0px 0px 10px 0px rgba(199, 199, 199, 1);
-			-moz-box-shadow: 0px 0px 10px 0px rgba(199, 199, 199, 1);
-			box-shadow: 0px 0px 10px 0px #c7c7c7; 
-			border: 2px solid transparent;
-			border-radius: 50%;
-			padding: 10px;
-			*/
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-evenly;
-		}
 
 		.navStockCard .navStockImg {
 			max-height: 100%;
@@ -52,6 +34,11 @@
 		<nav id="topNav">
 			<div class="topNavDiv" id="top_main_nav">
 				<div class="flexbox flex_row w_50">
+					<div id="navController" class="toggleBtn space_between">
+						<div class="toggleSign navDash"></div>
+						<div class="toggleSign navDash"></div>
+						<div class="toggleSign navDash"></div>
+					</div>
 					<a href="./index.html">letsPURCHASE.com</a>
 					<a class="bagPage nav_a" href="./bag.html">
 						<span class="licon cart_span">
@@ -64,9 +51,9 @@
 				<input type="search" name="search" id="search" placeholder="SEARCH">
 
 			</div>
-			<div class="topNavDiv" id="departments">
+			<div class="topNavDiv hideDepartment" id="departments">
 				<ul id="navUl">
-					<li class="navLi">
+					<li class="navLi departmentLi">
 						<a id="homePage" class="nav_a" href="../index.html">
 							<span class="licon">
 								<i class="fa-solid fa-house"></i>
@@ -75,7 +62,7 @@
 						</a>
 					</li>
 
-					<li class="navLi">
+					<li class="navLi departmentLi">
 						<a href="./mobiles.html" class="nav_a">
 							<div id="mobilesPage" class="navStockCard">
 								<img class="navStockImg" src="../img/mobiles/01.jpg" alt="mobiles">
@@ -84,7 +71,7 @@
 						</a>
 					</li>
 
-					<li class="navLi">
+					<li class="navLi departmentLi">
 						<a href="./desktop.html" class="nav_a">
 							<div id="desktopPage" class="navStockCard">
 								<img class="navStockImg" src="../img/desktop/01.jpg" alt="mobiles">
@@ -93,7 +80,7 @@
 						</a>
 					</li>
 
-					<li class="navLi">
+					<li class="navLi departmentLi">
 						<a href="./smart_wear.html" class="nav_a">
 							<div id="smartWearPage" class="navStockCard">
 								<img class="navStockImg" src="../img/smart wear/01.jpg" alt="mobiles">
@@ -102,7 +89,7 @@
 						</a>
 					</li>
 
-					<li class="navLi">
+					<li class="navLi departmentLi">
 						<a id="loginPage" class="nav_a" href="./login.html">
 							<span class="licon">
 								<i class="fa-solid fa-arrow-right-to-bracket"></i>
@@ -115,12 +102,19 @@
 			</div>
 		</nav>
 
-		<div class="mobileListContainer">
+		<div class="mobileListContainer relative">
 			<!-- STOCK FILTERS -->
-			<div id="stockFilters">
+			<div id="filterToggleBtnCover" class="btnCover" class="absolute">
+				<div id="filterToggleBtn" class="space_between">
+					<div class="toggleSign filterBtnSign bg_red"></div>
+					<div class="toggleSign filterBtnSign bg_red"></div>
+					<div class="toggleSign filterBtnSign bg_red"></div>
+				</div>
+			</div>
+			<div id="stockFilters" class="hideStockFilter">
 
 				<h2 id="filterHeadding">FILTERS</h2>
-				
+
 				<div class="hr_2px bg_black_20 side_bar_hr hr_w_100"></div>
 
 				<div id="filter_by_price">
@@ -135,7 +129,7 @@
 					<div id="scaleDisplayDiv">
 						<span id="starting_price">₹0</span>
 						to
-						<input type="text" name="ending_price"  id="ending_price"></input>
+						<input type="text" name="ending_price" id="ending_price"></input>
 
 					</div>
 
@@ -182,7 +176,7 @@
 
 			</div>
 			<div id="mobiles" class="stockListHolder">
-			
+
 			</div>
 		</div>
 		<footer id="footer"></footer>
@@ -208,7 +202,7 @@
 		manageDropDownBox(filterByBrandHeadding, filterBrandNames)
 
 	</script>
-
+	<script src="../scripts/nav_controller.js"></script>
 	<script type="module" src="../scripts/mobiles.js"></script>
 	<script src="../scripts/bag/item_nos.js"></script>
 	<script src="../scripts/footer.js"></script>
